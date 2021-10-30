@@ -23,14 +23,13 @@ git config --global init.defaultBranch main
 
 Setting `SSH` key required to sync your local git repositories with the `origin`. To set SSH key on your local machine you need to use `ssh-keyget`:
 
-
-
-
 ``` shell
-ssh-keygen -t rsa -b 4096 -C "YOUR_EAMIL@example.com"
-
-
+ssh-keygen -t ed25519 -C "YOUR_EAMIL@example.com"
 ```
+
+Note that `-t` argument enable you to define the type of algorithm for authentication key, in this case I used `ed25519` and the `-C` argument used to add comment,in this case the user name email.
+
+You will have to ender that file name for the SSH key, by default it will save it under the `~/.ssh` folder.
 
 
 
