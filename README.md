@@ -4,6 +4,13 @@ Initial setting for Git
 
 Source: https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
 
+
+**Note:** you may have to install `command line developer tools`, if it is not already installed on your machine, it will pop-up the following option, and you will have to install it:
+
+![image](https://user-images.githubusercontent.com/12760966/139562122-8a360563-89f0-4108-b916-ca20a4be7fe1.png)
+
+
+
 #### Set users
 
 ``` shell
