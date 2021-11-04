@@ -75,9 +75,26 @@ ssh-add -K ~/.ssh/your_ssh_key
 ```
 
 
-Resources
+#### Resources
 
 - Github documentation - https://docs.github.com/en/enterprise-server@3.0/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
 - `ssh-keyget` arguments -  https://www.ssh.com/academy/ssh/keygen
 - A great video toturial about setting SSH:  https://www.youtube.com/watch?v=RGOj5yH7evk&t=1230s&ab_channel=freeCodeCamp.org
+
+### Install R and RStudio
+
+To set in your machine R and RStudio you should start first with installing R from CRAN. Go to https://cran.r-project.org/ and select `Download R for macOS` and select the release you wish to install and download. Once you finish to download the build you select open the `pkg` fild and start to install it:
+
+![image](https://user-images.githubusercontent.com/12760966/140316216-0e51e0b1-4f32-4a63-8913-160fb939895a.png)
+
+
+**Note:** Older releases available on [CRAN Archive](https://cran-archive.r-project.org/bin/macosx/).
+
+Once R installed, you can install RStudio - go to https://www.rstudio.com/products/rstudio/download/ and select the version and download it:
+![image](https://user-images.githubusercontent.com/12760966/140406353-912757a3-542c-46b5-92cb-c8a6803c2d69.png)
+
+Once finish to download it move the application into the Application folder.
+
+
+
 
