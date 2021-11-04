@@ -81,6 +81,30 @@ ssh-add -K ~/.ssh/your_ssh_key
 - `ssh-keyget` arguments -  https://www.ssh.com/academy/ssh/keygen
 - A great video toturial about setting SSH:  https://www.youtube.com/watch?v=RGOj5yH7evk&t=1230s&ab_channel=freeCodeCamp.org
 
+### Install Command Lines Tools
+
+This section covers core command lines tools.
+
+#### Homebrew
+
+The Homebrew (or `brew`) enables you to install CL packages and tools for Mac. To install `brew` run from the terminal:
+
+```shell
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+More info available: https://brew.sh/
+
+#### jq
+
+The `jq` is a lightweight and flexible command-line JSON processor. You can install it with `brew`:
+
+```shell
+brew install jq
+```
+
+
+
 ### Install R and RStudio
 
 To set in your machine R and RStudio you should start first with installing R from CRAN. Go to https://cran.r-project.org/ and select `Download R for macOS` and select the release you wish to install and download. Once you finish to download the build you select open the `pkg` fild and start to install it:
