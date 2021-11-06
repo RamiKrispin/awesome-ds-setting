@@ -120,5 +120,24 @@ Once R installed, you can install RStudio - go to https://www.rstudio.com/produc
 Once finish to download it move the application into the Application folder.
 
 
+### Shortcuts
+
+This section covers the installation and setting of additional tools and features such as screen spliting, shortcuts, etc.
+
+#### Spectacle
+
+Spectacle is great tool for moving and resizing your windows. To install it go to https://www.spectacleapp.com/ and download it. Once installed you can modify the default setting:
+
+![image](https://user-images.githubusercontent.com/12760966/140613227-e14dc19b-ba3e-435f-b67f-4f12bcc28c27.png)
+
+**Note:** Once installed, don't forget to select the checkbox `Launch Spectacle at login` to keep the the app active after reseting/shoutdown your machine.
+
+#### Keyboard Shortcuts
+
+* Change language - if you are using more than one language, you can add a keyboard shortcut for switching between them. Go to `System Preferences...` -> `keyboard` and select the shortcut tab. Under the `Input Sources` tick the `Select the previous input source option`:
+
+![image](https://user-images.githubusercontent.com/12760966/140625490-3b688dee-fc09-4252-9626-05d10094187e.png)
+
+**Note:** that you can modify the keyboard shortcut by clicking shortcut definition in that row
 
 
