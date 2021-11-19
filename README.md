@@ -134,6 +134,13 @@ Once R installed, you can install RStudio - go to https://www.rstudio.com/produc
 
 Once finish to download it move the application into the Application folder.
 
+#### Set RStudio
+
+- Code snippet - go to `Tools` -> `Global Option` -> `Code`, on the Snippet menue tick the `Enable code snippets` option and select `Edit Snippets` button to edit your snippits. My default snippets available [here](https://gist.github.com/RamiKrispin/b16b63688746c4cfd01ec21cc7c25d2a).
+- Appearance - go to `Tools` -> `Global Option` -> `Appearance` and select the font type and size, and editor theme (Merbivore Soft):
+
+![image](https://user-images.githubusercontent.com/12760966/142575001-0cc0d549-25c6-4eab-9d1a-3f540d6ba8ae.png)
+
 
 ### Shortcuts
 
