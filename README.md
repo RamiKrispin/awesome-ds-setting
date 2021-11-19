@@ -1,3 +1,10 @@
+Hello 👋 
+
+After setting/reinstalling a couple of machines from scratch in the last few weeks,  I decided for once and for all to document my default data science setting and environment.
+
+💡 **A pro tip** 👉🏼 avoid dropping a cup of ☕️ on your machine 🤦🏻‍♂️
+
+
 ### Setting Git and Github 
 
 Initial setting for Git
