@@ -7,7 +7,7 @@ I am working with macOS Montarey but most of this tools in this document are OS 
 💡 **A pro tip** 👉🏼 avoid dropping a cup of ☕️ on your machine 🤦🏻‍♂️
 
 This document covers:
-- Setting Git and SSH
+- [Setting Git and SSH](https://github.com/RamiKrispin/awesome-ds-setting/blob/main/README.md#setting-git-and-ssh)
 - Install Command Lines Tools
 - Install R and RStudio
 - Shortcuts
