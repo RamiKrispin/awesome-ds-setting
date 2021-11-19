@@ -6,8 +6,14 @@ I am working with macOS Montarey but most of this tools in this document are OS 
 
 💡 **A pro tip** 👉🏼 avoid dropping a cup of ☕️ on your machine 🤦🏻‍♂️
 
+This document covers:
+- Setting Git and SSH
+- Install Command Lines Tools
+- Install R and RStudio
+- Shortcuts
 
-### Setting Git and Github 
+
+### Setting Git and SSH
 
 Initial setting for Git
 
