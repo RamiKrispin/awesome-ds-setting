@@ -1,6 +1,6 @@
 Hello 👋 
 
-After setting/reinstalling a couple of machines from scratch in the last few weeks,  I decided for once and for all to document my default data science setting and environment.
+After setting/reinstalling a couple of machines from scratch in the last few months, I decided for once and for all to document my default data science setting and environment.
 
 I am working with macOS Montarey but most of this tools in this document are OS agnostic (e.g., Windows, Linux, etc.).
 
