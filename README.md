@@ -158,6 +158,7 @@ Once finish to download it move the application into the Application folder.
 - New Rmarkdown notebook - `Cmd` + `R`
 
 
+
 ### Shortcuts
 
 This section covers the installation and setting of additional tools and features such as screen spliting, shortcuts, etc.
