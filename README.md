@@ -145,6 +145,19 @@ Once finish to download it move the application into the Application folder.
 ![image](https://user-images.githubusercontent.com/12760966/142575001-0cc0d549-25c6-4eab-9d1a-3f540d6ba8ae.png)
 
 
+#### RStudio main shortcuts
+
+- Clear console - `Ctrl` +  `L`
+- Clost current document - `Cmd` + `W`
+- Move focus to the Source panel - `Cmd` + `1`
+- Move focus to the Console panel - `Cmd` + `2`
+- Move tab left - `Cmd` + `]`
+- Move tab right - `Cmd` + `[`
+- Move tab to first - `Cmd` + `P`
+- Move tab to last - `Cmd` + `\`
+- New Rmarkdown notebook - `Cmd` + `R`
+
+
 ### Shortcuts
 
 This section covers the installation and setting of additional tools and features such as screen spliting, shortcuts, etc.
