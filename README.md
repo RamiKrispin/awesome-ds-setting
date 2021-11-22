@@ -136,6 +136,7 @@ Once finish to download it move the application into the Application folder.
 
 #### Set RStudio
 
+- Workspace - select `Never` to `Save workspace to .RData on exit` option
 - History - go to `Tools` -> `Global Option` -> `General` and untick the first options - `Always save history...`. This will avoid saving the session on quit.
 - Code: 
   - Code snippet - go to `Tools` -> `Global Option` -> `Code`, on the Snippet menue tick the `Enable code snippets` option and select `Edit Snippets` button to edit your snippits. My default snippets available [here](https://gist.github.com/RamiKrispin/b16b63688746c4cfd01ec21cc7c25d2a).
