@@ -41,6 +41,22 @@ The `init.defaultBranch` argument set the default branch name when running `git 
 git config --global init.defaultBranch main
 ```
 
+#### Set Global Git ignore file
+
+Setting a global `gitignore` file will enable you to set general ignore roles that will apply to all the repositories in your machine.
+
+``` shell
+touch ~/.gitignore
+git config --global core.excludesFile ~/.gitignore
+```
+
+Adding the `DS_Store` file for the global Git ignore file
+
+``` shell 
+echo .DS_Store >> ~/.gitignore
+```
+
+
 #### Set SSH
 
 Setting `SSH` key required to sync your local git repositories with the `origin`. To set SSH key on your local machine you need to use `ssh-keyget`:
@@ -95,6 +111,7 @@ ssh-add -K ~/.ssh/your_ssh_key
 - Github documentation - https://docs.github.com/en/enterprise-server@3.0/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
 - `ssh-keyget` arguments -  https://www.ssh.com/academy/ssh/keygen
 - A great video toturial about setting SSH:  https://www.youtube.com/watch?v=RGOj5yH7evk&t=1230s&ab_channel=freeCodeCamp.org
+- Setting Git ignore - https://www.atlassian.com/git/tutorials/saving-changes/gitignore
 
 ### Install Command Lines Tools
 
