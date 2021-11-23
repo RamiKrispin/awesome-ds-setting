@@ -29,8 +29,8 @@ Source: https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
 ##### Set users
 
 ``` shell
-git config --global user.name "John Doe"
-git config --global user.email johndoe@example.com
+git config --global user.name "RamiKrispin"
+git config --global user.email myemail@example.com
 ```
 
 ##### Set default branch name
@@ -58,7 +58,8 @@ echo .DS_Store >> ~/.gitignore
 
 ##### Set default editor
 
-You can set the default editor for Git with the `core.editor`:
+Git enables you to set the default shell code editor to create and edit your commit and tag messages with the `core.editor` argument:
+
 ``` shell
 git config --global core.editor "vim"
 ```
