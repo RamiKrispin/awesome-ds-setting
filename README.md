@@ -41,7 +41,7 @@ The `init.defaultBranch` argument set the default branch name when running `git 
 git config --global init.defaultBranch main
 ```
 
-#### Set Global Git ignore file
+#### Set global Git ignore file
 
 Setting a global `gitignore` file will enable you to set general ignore roles that will apply to all the repositories in your machine.
 
@@ -50,7 +50,7 @@ touch ~/.gitignore
 git config --global core.excludesFile ~/.gitignore
 ```
 
-Adding the `DS_Store` file for the global Git ignore file
+To add file to the global Git ignore file you can use the `echo` command. For example, setting Git to ignore the `DS_Store` file on all local repositories:
 
 ``` shell 
 echo .DS_Store >> ~/.gitignore
