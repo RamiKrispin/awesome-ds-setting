@@ -50,7 +50,7 @@ touch ~/.gitignore
 git config --global core.excludesFile ~/.gitignore
 ```
 
-To add file to the global Git ignore file you can use the `echo` command. For example, setting Git to ignore the `DS_Store` file on all local repositories:
+Once the global Git ignore file is set, you just need to update the files you wish Git to ignore across all your local repositories. For example, the following will add `.DS_Store` to the global ignroe list:
 
 ``` shell 
 echo .DS_Store >> ~/.gitignore
