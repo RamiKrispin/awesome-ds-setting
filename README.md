@@ -25,15 +25,15 @@ Source: https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
 ![image](https://user-images.githubusercontent.com/12760966/139562122-8a360563-89f0-4108-b916-ca20a4be7fe1.png)
 
 
-
-#### Set users
+#### Set Git global options
+##### Set users
 
 ``` shell
 git config --global user.name "John Doe"
 git config --global user.email johndoe@example.com
 ```
 
-#### Set default branch name
+##### Set default branch name
 
 The `init.defaultBranch` argument set the default branch name when running `git init`:
 
@@ -41,7 +41,7 @@ The `init.defaultBranch` argument set the default branch name when running `git 
 git config --global init.defaultBranch main
 ```
 
-#### Set global Git ignore file
+##### Set global Git ignore file
 
 Setting a global `gitignore` file will enable you to set general ignore roles that will apply to all the repositories in your machine.
 
@@ -55,6 +55,14 @@ Once the global Git ignore file is set, you just need to update the files you wi
 ``` shell 
 echo .DS_Store >> ~/.gitignore
 ```
+
+##### Set default editor
+
+You can set the default editor for Git with the `core.editor`:
+``` shell
+git config --global core.editor "vim"
+```
+
 
 
 #### Set SSH
