@@ -184,7 +184,9 @@ Once finish to download it move the application into the Application folder.
 - Move tab to last - `Cmd` + `\`
 - New Rmarkdown notebook - `Cmd` + `R`
 
+#### Install XQuartz
 
+The XQuartz is an open-source project that provides required for graphic applications (X11) for macOS (similar to the X.Org X Window System functionality). To install it go to https://www.xquartz.org/ - download and install it.
 
 ### Shortcuts
 
