@@ -151,7 +151,33 @@ Minikube enables you to set virtual environment to run Docker. This is mainly re
 ``` shell
 brew install kubectl
 brew install hyperkit
+brew install docker
 brew install minikube
+```
+
+Lunching minikube with the `start` argument and setting the memory and cpu allocation:
+
+``` shell
+> minikube start --memory 4096 --cpus 2 --driver hyperkit
+😄  minikube v1.24.0 on Darwin 12.0.1
+    ▪ MINIKUBE_ACTIVE_DOCKERD=minikube
+✨  Using the hyperkit driver based on user configuration
+👍  Starting control plane node minikube in cluster minikube
+🔥  Creating hyperkit VM (CPUs=2, Memory=4096MB, Disk=20000MB) ...
+🐳  Preparing Kubernetes v1.22.3 on Docker 20.10.8 ...
+    ▪ Generating certificates and keys ...
+    ▪ Booting up control plane ...
+    ▪ Configuring RBAC rules ...
+🔎  Verifying Kubernetes components...
+    ▪ Using image gcr.io/k8s-minikube/storage-provisioner:v5
+🌟  Enabled addons: storage-provisioner, default-storageclass
+🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+```
+
+Lunch Docker:
+
+``` shell
+eval $(minikube -p minikube docker-env)
 ```
 
 #### Resources 
