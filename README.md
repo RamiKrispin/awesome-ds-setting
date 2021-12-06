@@ -180,6 +180,62 @@ Lunch Docker:
 eval $(minikube -p minikube docker-env)
 ```
 
+Check the Docker status:
+``` shell
+> docker info
+Client:
+ Context:    default
+ Debug Mode: false
+
+Server:
+ Containers: 15
+  Running: 14
+  Paused: 0
+  Stopped: 1
+ Images: 10
+ Server Version: 20.10.8
+ Storage Driver: overlay2
+  Backing Filesystem: extfs
+  Supports d_type: true
+  Native Overlay Diff: true
+  userxattr: false
+ Logging Driver: json-file
+ Cgroup Driver: systemd
+ Cgroup Version: 1
+ Plugins:
+  Volume: local
+  Network: bridge host ipvlan macvlan null overlay
+  Log: awslogs fluentd gcplogs gelf journald json-file local logentries splunk syslog
+ Swarm: inactive
+ Runtimes: io.containerd.runc.v2 io.containerd.runtime.v1.linux runc
+ Default Runtime: runc
+ Init Binary: docker-init
+ containerd version: e25210fe30a0a703442421b0f60afac609f950a3
+ runc version: 4144b63817ebcc5b358fc2c8ef95f7cddd709aa7
+ init version: de40ad0
+ Security Options:
+  seccomp
+   Profile: default
+ Kernel Version: 4.19.202
+ Operating System: Buildroot 2021.02.4
+ OSType: linux
+ Architecture: x86_64
+ CPUs: 2
+ Total Memory: 3.847GiB
+ Name: minikube
+ ID: 2IME:DJBF:L32S:HA4Q:DFCX:2LRI:JBCQ:6ORQ:RHUE:Q4S6:7WYE:PUD7
+ Docker Root Dir: /var/lib/docker
+ Debug Mode: false
+ Registry: https://index.docker.io/v1/
+ Labels:
+  provider=hyperkit
+ Experimental: false
+ Live Restore Enabled: false
+ Product License: Community Engine
+```
+
+
+
 #### Resources 
 - Minikube documentation - https://minikube.sigs.k8s.io/docs/start/
 - Installation guide - https://www.youtube.com/watch?v=zwmjzU62LWQ&ab_channel=AutomationStepbyStep
