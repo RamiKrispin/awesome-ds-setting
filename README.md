@@ -65,8 +65,6 @@ Git enables you to set the default shell code editor to create and edit your com
 git config --global core.editor "vim"
 ```
 
-
-
 #### Set SSH
 
 Setting `SSH` key required to sync your local git repositories with the `origin`. To set SSH key on your local machine you need to use `ssh-keyget`:
@@ -115,7 +113,6 @@ Last, run the following to load the key:
 ssh-add -K ~/.ssh/your_ssh_key
 ```
 
-
 #### Resources
 
 - Github documentation - https://docs.github.com/en/enterprise-server@3.0/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
@@ -148,6 +145,8 @@ brew install jq
 ### Install Docker
 
 There are multiple ways to spin a VM locally to run Docker. I typically use [Docker Desktop](https://www.docker.com/products/docker-desktop), and for learning purposes (e.g., Kubernetes) I also install [Minikube](https://minikube.sigs.k8s.io/docs/).
+
+<img src="images/get_docker.png" width="65%" align="center"/></a>
 
 #### Install Docker Desktop
 
