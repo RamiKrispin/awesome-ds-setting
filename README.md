@@ -146,11 +146,11 @@ brew install jq
 
 There are multiple ways to spin a VM locally to run Docker. I typically use [Docker Desktop](https://www.docker.com/products/docker-desktop), and for learning purposes (e.g., Kubernetes) I also install [Minikube](https://minikube.sigs.k8s.io/docs/).
 
-<img src="images/get_docker.png" width="65%" align="center"/></a>
-
 #### Install Docker Desktop
 
-Go to [Docker website](https://docs.docker.com/get-docker/) and follow the intallation instractions according to your OS
+Go to [Docker website](https://docs.docker.com/get-docker/) and follow the intallation instractions according to your OS:
+
+<img src="images/get_docker.png" width="65%" align="center"/></a>
 
 #### Install Minikube
 
