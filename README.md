@@ -144,7 +144,15 @@ The `jq` is a lightweight and flexible command-line JSON processor. You can inst
 brew install jq
 ```
 
-### Set Docker via Minikube
+### Install Docker
+
+There are multiple ways to spin a VM locally to run Docker. I typically use [Docker Desktop](https://www.docker.com/products/docker-desktop), and for learning purposes (e.g., Kubernetes) I also install [Minikube](https://minikube.sigs.k8s.io/docs/).
+
+#### Install Docker Desktop
+
+Go to [Docker website](https://docs.docker.com/get-docker/) and follow the intallation instractions according to your OS
+
+#### Install Minikube
 
 Minikube enables you to set virtual environment to run Docker. This is mainly relevant if you are using macOS or Windows and want to run Docker via cli. To install Minikube you will need to install first [kubectl](https://kubernetes.io/docs/reference/kubectl/overview/), [hyperkit](https://github.com/moby/hyperkit). We will use `brew` to install all those components:
 
