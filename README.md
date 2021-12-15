@@ -292,6 +292,30 @@ Once finish to download it move the application into the Application folder.
 
 The XQuartz is an open-source project that provides required for graphic applications (X11) for macOS (similar to the X.Org X Window System functionality). To install it go to https://www.xquartz.org/ - download and install it.
 
+#### Install Orca
+
+Orca is application for transferring plotly graphs into images. To install the app on macOS:
+
+- Go to the project [Github page](https://github.com/plotly/orca) and download the most recent [release](https://github.com/plotly/orca/releases) (i.e., `mac-release.zip`)
+- Unzip the `mac-release.zip` file.
+- Double-click on the `orca-X.Y.Z.dmg` file. This will open an installation window.
+- Drag the orca icon into the Applications folder.
+- Open finder and navigate to the Applications/ folder.
+- Right-click on the orca icon and select Open from the context menu.
+- A password dialog will appear asking for permission to add orca to your system `PATH`.
+- Enter you password and click OK.
+- This should open an Installation Succeeded window.
+- Open a new terminal and verify that the orca executable is available on your PATH.
+
+``` shell
+> which orca
+/usr/local/bin/orca
+```
+
+**Resources**
+- https://github.com/plotly/orca/releases
+- https://plotly.com/r/static-image-export/
+
 ### Shortcuts
 
 This section covers the installation and setting of additional tools and features such as screen spliting, shortcuts, etc.
