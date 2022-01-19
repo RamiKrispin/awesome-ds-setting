@@ -250,6 +250,80 @@ Server:
 - Kubectl - https://kubernetes.io/docs/reference/kubectl/overview/
 - hyperkit - https://github.com/moby/hyperkit
 
+### Set the terminal
+
+This section focuses on installing and setting tools for working on the terminal. The `terminal` is the built-in emulator on mac. I personally love to work with `iTerm2` as it provides additional functionality and customization options. iTerm2 is available only for mac, and can be installed directly from the [iTerm2](https://iterm2.com/) website or via `homebrew`:
+
+``` shell
+> brew cask install iterm2
+.
+.
+.
+==> Installing Cask iterm2
+==> Moving App 'iTerm.app' to '/Applications/iTerm.app'
+🍺  iterm2 was successfully installed!
+```
+
+The next step is to install Z shell or `zsh`. The `zsh` is shell flavor built on top of `bash`, providing a variety of add-in tools on the terminal. We will use `homebrew` again to install `zsh`:
+
+``` shell
+> brew install zsh
+.
+.
+.
+==> Installing zsh
+==> Pouring zsh--5.8_1.monterey.bottle.tar.gz
+🍺  /usr/local/Cellar/zsh/5.8_1: 1,531 files, 14.7MB
+```
+
+After installing the `zsh` we will install `oh-my-zsh`, an open-source framework for managing `zsh` configuration. We wiil install it with the `curl` command:
+
+``` shell
+ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+You can note that your terminal view changed (you may need to reset your terminal to see the changes) and the default command line cursor looks like:
+
+``` zsh
+➜  ~
+```
+
+The default setting of `Oh My Zsh` stored on `~/.zshrc` and you can modify the default theme by editing the file:
+
+```
+vim ~/.zshrc
+```
+
+I use the `powerlevel10k` which can be install by cloning the Github repository:
+
+``` zsh
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+```
+
+And then change the theme setting on the `~/.zshrc` by `ZSH_THEME="powerlevel10k/powerlevel10k"`. After restarting the terminal, and reopening it you will a sequence of questions on that enables you to choose your terminal setting:
+
+``` zsh
+
+                            Install Meslo Nerd Font?
+
+(y)  Yes (recommended).
+
+(n)  No. Use the current font.
+
+(q)  Quit and do nothing.
+
+Choice [ynq]:
+```
+
+
+
+
+#### Resources
+- `iTerm2` - https://iterm2.com/index.html
+- `oh my zsh` - https://ohmyz.sh/
+- freeCodeCamp blog post - https://www.freecodecamp.org/news/how-to-configure-your-macos-terminal-with-zsh-like-a-pro-c0ab3f3c1156/
+- `powerlevel10k` theme - https://github.com/romkatv/powerlevel10k
+
 ### Install R and RStudio
 
 To set in your machine R and RStudio you should start first with installing R from CRAN. Go to https://cran.r-project.org/ and select `Download R for macOS` and select the release you wish to install and download. Once you finish to download the build you select open the `pkg` fild and start to install it:
