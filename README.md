@@ -316,7 +316,15 @@ Choice [ynq]:
 ```
 
 
+You can always modify your selection by using:
 
+``` zsh
+ p10k configure
+ ```
+ 
+ The terminal after adding the `powerlevel10k` theme looks like:
+ 
+ <img src="images/terminal.png" width="65%" align="center"/></a>
 
 #### Resources
 - `iTerm2` - https://iterm2.com/index.html
