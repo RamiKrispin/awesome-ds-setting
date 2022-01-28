@@ -297,8 +297,7 @@ vim ~/.zshrc
 I use the `powerlevel10k` which can be install by cloning the Github repository:
 
 ``` zsh
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-```
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git
 
 And then change the theme setting on the `~/.zshrc` by `ZSH_THEME="powerlevel10k/powerlevel10k"`. After restarting the terminal, and reopening it you will a sequence of questions on that enables you to set the theme setting:
 
@@ -326,11 +325,32 @@ You can always modify your selection by using:
  
  <img src="images/terminal.png" width="65%" align="center"/></a>
 
+Installing `zsh-syntax-highlighting` to add code highlight on the terminal:
+
+``` zsh
+brew install zsh-syntax-highlighting
+```
+
+After the installation is done you will need to clone the source code. I set the destination as home folder, defining the traget folder hidden:
+
+``` zsh
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.zsh-syntax-highlighting
+echo "source $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
+```
+
+Once you reset your terminal, you should see be able to see the syntex highlight in green (in my case):
+
+<img src="images/terminal_highlight.png" width="65%" align="center"/></a>
+
+
+
+
 #### Resources
 - `iTerm2` - https://iterm2.com/index.html
 - `oh my zsh` - https://ohmyz.sh/
 - freeCodeCamp blog post - https://www.freecodecamp.org/news/how-to-configure-your-macos-terminal-with-zsh-like-a-pro-c0ab3f3c1156/
 - `powerlevel10k` theme - https://github.com/romkatv/powerlevel10k
+- `zsh-syntax-highlighting` - https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#in-your-zshrc
 
 ### Install R and RStudio
 
