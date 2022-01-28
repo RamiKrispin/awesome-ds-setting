@@ -250,9 +250,13 @@ Server:
 - Kubectl - https://kubernetes.io/docs/reference/kubectl/overview/
 - hyperkit - https://github.com/moby/hyperkit
 
-### Set the terminal
+### Terminal Setting
 
-This section focuses on installing and setting tools for working on the terminal. The `terminal` is the built-in emulator on mac. I personally love to work with `iTerm2` as it provides additional functionality and customization options. iTerm2 is available only for mac, and can be installed directly from the [iTerm2](https://iterm2.com/) website or via `homebrew`:
+This section focuses on installing and setting tools for working on the terminal. 
+
+#### Install iTerm2
+
+The `terminal` is the built-in emulator on mac. I personally love to work with `iTerm2` as it provides additional functionality and customization options. iTerm2 is available only for mac, and can be installed directly from the [iTerm2](https://iterm2.com/) website or via `homebrew`:
 
 ``` shell
 > brew cask install iterm2
@@ -263,6 +267,8 @@ This section focuses on installing and setting tools for working on the terminal
 ==> Moving App 'iTerm.app' to '/Applications/iTerm.app'
 🍺  iterm2 was successfully installed!
 ```
+
+#### Install zsh
 
 The next step is to install Z shell or `zsh`. The `zsh` is shell flavor built on top of `bash`, providing a variety of add-in tools on the terminal. We will use `homebrew` again to install `zsh`:
 
@@ -275,6 +281,8 @@ The next step is to install Z shell or `zsh`. The `zsh` is shell flavor built on
 ==> Pouring zsh--5.8_1.monterey.bottle.tar.gz
 🍺  /usr/local/Cellar/zsh/5.8_1: 1,531 files, 14.7MB
 ```
+
+#### Install and Set Oh-My-Zsh
 
 After installing the `zsh` we will install `oh-my-zsh`, an open-source framework for managing `zsh` configuration. We wiil install it with the `curl` command:
 
@@ -314,6 +322,7 @@ And then change the theme setting on the `~/.zshrc` by `ZSH_THEME="powerlevel10k
 Choice [ynq]:
 ```
 
+**Note:** the `Meslo Nerd` font is required to display symbles that is being used by the  `powerlevel10k` theme
 
 You can always modify your selection by using:
 
