@@ -252,7 +252,7 @@ Server:
 - Kubectl - https://kubernetes.io/docs/reference/kubectl/overview/
 - hyperkit - https://github.com/moby/hyperkit
 
-### Terminal Setting
+### Setting Terminal 
 
 This section focuses on installing and setting tools for working on the terminal. 
 
