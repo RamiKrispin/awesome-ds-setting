@@ -352,8 +352,6 @@ Once you reset your terminal, you should see be able to see the syntex highlight
 <img src="images/terminal_highlight.png" width="65%" align="center"/></a>
 
 
-
-
 #### Resources
 - `iTerm2` - https://iterm2.com/index.html
 - `oh my zsh` - https://ohmyz.sh/
@@ -448,3 +446,72 @@ Spectacle is great tool for moving and resizing your windows. To install it go t
 **Note:** that you can modify the keyboard shortcut by clicking shortcut definition in that row
 
 
+### Setting Postgres
+
+PostgreSQL supprts most of the common OS such as Windows, macOS, Linux, etc.
+
+To download go to Postgres project [website](https://www.postgresql.org/) and navigate to the **Downlaod** tab and select your OS, which will naviage it to the OS download page, and follow the instraction:
+
+ [<img src="images/download_page.png" width="80%" align="center"/></a>](https://www.postgresql.org/download/)
+
+
+On mac I highly recommand to install PostgreSQL through the [Postgres.app](https://postgresapp.com/):
+
+ [<img src="images/postgres_app.png" width="80%" align="center"/></a>](https://postgresapp.com/)
+
+
+When opening the app, you should have a default server set to port 5432 (make sure that this port is available):
+
+<img src="images/app_unactive.png" width="60%" align="center"/></a>
+
+To launch the server click on the `start` button:
+
+<img src="images/app_active.png" width="60%" align="center"/></a>
+
+By default, the server will create three databases - `postgres`, `YOUR_USER_NAME`, and `template1`. You can add additional server (or remove) by clicking the `+` or `-` symbols on the left botton.
+
+
+To run Postgres from the terminal you will have to set define the path of the app on your `zshrc` file (on mac) by adding the following line:
+
+``` zsh
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/14/bin/
+```
+
+Where `/Applications/Postgres.app/Contents/Versions/14/bin/` is the local path on my machine.
+
+Alternativly, you can set the alias from the terminal by running the following"
+
+
+``` zsh
+echo "export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/14/bin/" >> ${ZDOTDIR:-$HOME}/.zshrc
+```
+
+
+#### Clear port
+
+If the port you set for the Postgres server is in use you should expect to get the following message when trying to start the server:
+
+<img src="images/port_in_used.png" width="60%" align="center"/></a>
+
+This mean that the port is either used by other Postgres server or other application. To check what ports in use and by which applications you can use the `lsof` function on the terimnal:
+
+``` zsh
+sudo lsof -i :5432                                                                                           COMMAND  PID     USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+postgres 124 postgres    7u  IPv6 0xc250a5ea155736fb      0t0  TCP *:postgresql (LISTEN)
+postgres 124 postgres    8u  IPv4 0xc250a5ea164aa3b3      0t0  TCP *:postgresql (LISTEN)
+```
+
+Where the `i` argument enables to search by port number, in the example above by `5432`. As can see from the output, the port is used by other Posrgres server. You can clear the port by using the `pkill` command:
+
+``` zsh
+sudo pkill -u postgres
+```
+
+Where the `u` arugment enbales to define the port you want to clear by the USER field, in this case `postgres`.
+
+**Note:** Before you are clearing the port, make sure you do not need the applications on that port. 
+
+### Resources
+* **Tutrial -** https://www.youtube.com/watch?v=qw--VYLpxG4&t=1073s&ab_channel=freeCodeCamp.org
+* **PostgreSQL -** https://en.wikipedia.org/wiki/PostgreSQL
+* **Documentation -** https://www.postgresql.org/docs/
