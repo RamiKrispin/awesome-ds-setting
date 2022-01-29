@@ -10,8 +10,10 @@ This document covers:
 - [Setting Git and SSH](https://github.com/RamiKrispin/awesome-ds-setting/blob/main/README.md#setting-git-and-ssh)
 - [Install Command Lines Tools](https://github.com/RamiKrispin/awesome-ds-setting/blob/main/README.md#install-command-lines-tools)
 - [Install Docker](https://github.com/RamiKrispin/awesome-ds-setting/blob/main/README.md#install-docker)
+- [Setting Terminal](https://github.com/RamiKrispin/awesome-ds-setting#terminal-setting)
 - [Install R and RStudio](https://github.com/RamiKrispin/awesome-ds-setting/blob/main/README.md#install-r-and-rstudio)
 - [Shortcuts](https://github.com/RamiKrispin/awesome-ds-setting/blob/main/README.md#shortcuts)
+- [Setting Postgres](https://github.com/RamiKrispin/awesome-ds-setting#setting-postgres)
 
 
 ### Setting Git and SSH
