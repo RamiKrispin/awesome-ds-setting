@@ -517,3 +517,25 @@ Where the `u` arugment enbales to define the port you want to clear by the USER 
 * **Tutrial -** https://www.youtube.com/watch?v=qw--VYLpxG4&t=1073s&ab_channel=freeCodeCamp.org
 * **PostgreSQL -** https://en.wikipedia.org/wiki/PostgreSQL
 * **Documentation -** https://www.postgresql.org/docs/
+
+
+## Installing Draw.io Desktop
+
+The `drawio-desktop` is a desktop version of the [diagrams](https://www.diagrams.net/) app for creating diagrams and workflow charts. The desktop version, per the [project repository](https://github.com/jgraph/drawio-desktop), is designed to be completely isolated from the Internet, apart from the update process.
+
+
+<p class='image-right'><img src="images/draw.io pic.svg" width="100%" align="center"/></a> Image credit: https://www.diagrams.net/</p>
+
+To install the desktop version go to the [project repository](https://github.com/jgraph/drawio-desktop) and select the version you wish to install under the [releases](https://github.com/jgraph/drawio-desktop/releases) section:
+
+<img src="images/draw.io releases.png" width="100%" align="center"/></a>
+
+For macOS users, once download the `dmp` file and open it, move the build to the applications folder:
+
+<img src="images/draw.io app.png" width="60%" align="center"/></a>
+
+### Resources
+
+* **Draw.io documentation -** https://www.diagrams.net/
+* **drawio-desktop repository -** https://github.com/jgraph/drawio-desktop
+* **Online version -** https://app.diagrams.net/
