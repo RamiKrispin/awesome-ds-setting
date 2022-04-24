@@ -427,6 +427,63 @@ Orca is application for transferring plotly graphs into images. To install the a
 - https://github.com/plotly/orca/releases
 - https://plotly.com/r/static-image-export/
 
+
+### Setting Python
+
+This section focuses on setting up a Python environment.
+
+#### Installing miniconda
+
+Miniconda is a great tool to set local Python environments. Go to the Miniconda installer [page](https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links) and download the installing package based on your operating system and Python version to install the most recent version. Once Miniconda installed you can install Python packaes with `conda`:
+
+``` shell
+conda install pandas
+```
+
+Likewise, you can use `conda` to create an environment:
+
+```
+conda create -n myenv python
+```
+
+#### Common conda commands
+
+Get a list of environments:
+
+``` shell
+conda info --envs
+```
+
+Create an environment and set the Python version:
+
+```
+conda create --name myenv python=3.9
+```
+
+Get package available versions:
+
+```
+conda search pandas
+```
+
+Activate an enviroment:
+
+``` sheel
+conda activate myenv
+```
+
+Get a list of installed packages in the environment:
+
+``` shell
+conda list
+```
+
+Deactivate the enviroment:
+
+```shell
+conda deactivate
+```
+
 ### Shortcuts
 
 This section covers the installation and setting of additional tools and features such as screen spliting, shortcuts, etc.
@@ -446,7 +503,6 @@ Spectacle is great tool for moving and resizing your windows. To install it go t
 ![image](https://user-images.githubusercontent.com/12760966/140625490-3b688dee-fc09-4252-9626-05d10094187e.png)
 
 **Note:** that you can modify the keyboard shortcut by clicking shortcut definition in that row
-
 
 ### Setting Postgres
 
