@@ -428,6 +428,25 @@ Orca is application for transferring plotly graphs into images. To install the a
 - https://plotly.com/r/static-image-export/
 
 
+### Installing Julia
+
+To install Julia, go to https://julialang.org/downloads/ to download the current stable version of Julia or older releases. On Mac, the next step after moving the `dmg` file to the **Applications** folder, is to add Julia to PATH:
+
+``` shell
+sudo mkdir -p /usr/local/bin
+sudo rm -f /usr/local/bin/julia
+sudo ln -s /Applications/Julia-1.7.app/Contents/Resources/julia/bin/julia /usr/local/bin/julia
+
+```
+
+**Note:** That the Julia version on the code above should aligned with the one installed on your local machine. More info avilable [here](https://julialang.org/downloads/platform/#macos).
+
+
+#### Setting Julia with VScode
+
+WIP
+
+
 ### Setting Python
 
 This section focuses on setting up a Python environment.
