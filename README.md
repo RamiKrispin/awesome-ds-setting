@@ -21,7 +21,7 @@ This document covers the following:
 
 ## Setting Git and SSH
 
-Initial setting for Git
+This section focuses on the core git settings, such as global definitions and setting SSH with your Github account.
 
 Source: https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
 
@@ -158,6 +158,7 @@ ssh-add -K ~/.ssh/your_ssh_key
 - `ssh-keyget` arguments -  https://www.ssh.com/academy/ssh/keygen
 - A great video toturial about setting SSH:  https://www.youtube.com/watch?v=RGOj5yH7evk&t=1230s&ab_channel=freeCodeCamp.org
 - Setting Git ignore - https://www.atlassian.com/git/tutorials/saving-changes/gitignore
+- Initial Git setup - https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
 
 ### Install Command Lines Tools
 
