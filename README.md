@@ -1,12 +1,15 @@
 Hello 👋 
 
-After setting/reinstalling a couple of machines from scratch in the last few months, I decided for once and for all to document my default data science setting and environment.
-
-I am working with macOS Montarey but most of the tools in this document are OS agnostic (e.g., Windows, Linux, etc.).
+After setting/reinstalling a couple of machines from scratch in the last few months, I decided for once and for all to document my default data science settings and tools I typically used. 
 
 💡 **A pro tip** 👉🏼 avoid dropping a cup of ☕️ on your machine 🤦🏻‍♂️
 
-This document covers:
+That includes installing programming languages such as R, Julia, and Python and their supporting IDEs RStudio and VScode. In addition, set the terminal, git, and install supporting tools such as iTerm2, oh-my-zsh, Docker, etc. 
+
+
+**Update:** This setting is up-to-date with macOS Ventura. However, most of the tools in this document should be OS agnostic (e.g., Windows, Linux, etc.) with some minor modifications.
+
+This document covers the following:
 - [Setting Git and SSH](https://github.com/RamiKrispin/awesome-ds-setting/blob/main/README.md#setting-git-and-ssh)
 - [Install Command Lines Tools](https://github.com/RamiKrispin/awesome-ds-setting/blob/main/README.md#install-command-lines-tools)
 - [Install Docker](https://github.com/RamiKrispin/awesome-ds-setting/blob/main/README.md#install-docker)
@@ -16,29 +19,48 @@ This document covers:
 - [Setting Postgres](https://github.com/RamiKrispin/awesome-ds-setting#setting-postgres)
 
 
-### Setting Git and SSH
+## Setting Git and SSH
 
 Initial setting for Git
 
 Source: https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
 
+All the steps below, for setting the Git and SSH are done through the terminal (unless mentioned otherwise).
 
-**Note:** you may have to install `command line developer tools`, if it is not already installed on your machine, it will pop-up the following option, and you will have to install it:
+Let's start by checking the `git` version running the following:
+
+``` shell
+git --version
+```
+
+If this is a new computer or you did not set it before, it should prompt a window and ask you if you want to install the `command line developer tools`:
+
 
 ![image](https://user-images.githubusercontent.com/12760966/139562122-8a360563-89f0-4108-b916-ca20a4be7fe1.png)
 
+This required to run git, go ahead and install it. Once the `command line developer tools` installed, we can go back to the terminal and start set the git golbal settings.
 
 #### Set Git global options
+
+Git enables you to set both local and global options. Global settings, as the names implies, applied on all repositories by default. You can override the global settings on specific repos by using local settings. I define as global the following:
+
+- Git user name
+- Git user email
+- Default branch name
+- Global git ignore file
+- Default editor (for merging comments)
+
 ##### Set users
 
+Setting global user name and email by using the `config --global` command:
 ``` shell
-git config --global user.name "RamiKrispin"
-git config --global user.email myemail@example.com
+git config --global user.name "USER_NAME"
+git config --global user.email "YOUR_EAMIL@example.com"
 ```
 
 ##### Set default branch name
 
-The `init.defaultBranch` argument set the default branch name when running `git init`:
+Next, let's set the default branch name (e.g., that git will create when running `git init`) using the `init.defaultBranch` argument:
 
 ``` shell
 git config --global init.defaultBranch main
@@ -46,14 +68,19 @@ git config --global init.defaultBranch main
 
 ##### Set global Git ignore file
 
-Setting a global `gitignore` file will enable you to set general ignore roles that will apply to all the repositories in your machine.
+Setting a global `gitignore` file enables setting general ignore roles that will apply to all the repositories in your machine. First, let's create the global `.gitignore` file:
 
 ``` shell
 touch ~/.gitignore
+```
+
+Next, let's define this file as global:
+
+``` shell
 git config --global core.excludesFile ~/.gitignore
 ```
 
-Once the global Git ignore file is set, you just need to update the files you wish Git to ignore across all your local repositories. For example, the following will add `.DS_Store` to the global ignroe list:
+Once the global `.gitignore` file is set, you just need to update the files you wish Git to ignore across all your local repositories. For example, the following will add `.DS_Store` to the global ignroe list:
 
 ``` shell 
 echo .DS_Store >> ~/.gitignore
@@ -69,29 +96,39 @@ git config --global core.editor "vim"
 
 #### Set SSH
 
-Setting `SSH` key required to sync your local git repositories with the `origin`. To set SSH key on your local machine you need to use `ssh-keyget`:
+Setting `SSH` key required to sync your local git repositories with the `origin`. By default, when creating the SSH keys it writes the files under the `.ssh` folder, if exists, otherwise it writes it down under the root folder. It is more "clean" to have it under the `.ssh` folder, therefore, my settings below assume this folder exists. 
+
+Let's start by creating the `.ssh` folder:
+
+``` shell
+mkdir ~/.ssh
+```
+
+The `ssh-keyget` command creates the SSH keys files:
+
+To set SSH key on your local machine you need to use `ssh-keyget`:
 
 ``` shell
 ssh-keygen -t ed25519 -C "YOUR_EAMIL@example.com"
 ```
+**Note:** The `-t` argument defines the algorithm type for the authentication key, in this case I used `ed25519` and the `-C` argument enables adding comment,in this case the user name email for reference.
 
-Note that `-t` argument enable you to define the type of algorithm for authentication key, in this case I used `ed25519` and the `-C` argument used to add comment,in this case the user name email.
-
-You will have to enter the file name for the SSH key, by default it will save it under the `~/.ssh` folder. 
+After runngint the `ssh-keygen` command, it will prompt for setting file name and password (optional). By default it will save it under the root folder. 
 
 **Note:** this process will generate two files:
 - `your_ssh_key` is the private key, you should not expose it
 - `your_ssh_key.pub` is the public key which will be used to to set the SSH on Github
 
-The next step is to register the key on your Github account. Under setting select on the main menu `SSH and GPG keys` and click on the `New SSH key`:
+The next step is to register the key on your Github account. On your account main page go to the `Settings` menu and select on the main menu `SSH and GPG keys` (purple rectangle 👇🏼) and click on the `New SSH key` (yellow rectangle 👇🏼):
 
-<img width="1054" alt="Screen Shot 2021-10-30 at 4 57 58 PM" src="https://user-images.githubusercontent.com/12760966/139561558-66920a3a-7890-4247-887c-c94319100156.png">
+<img width="1054" alt="Screenshot_ssh1" src="images/git_ssh1.png">
 
 
-And then, set the key name and paste the public key inside the key box:
+Next, set the key name under the title text box (purple rectangle 👇🏼), and paste your public key to the `key` box (turquoise rectangle 👇🏼):
 
-![image](https://user-images.githubusercontent.com/12760966/139561686-f2bc745c-b112-46e3-be4c-07136080a4cf.png)
+<img width="1054" alt="Screenshot_ssh2" src="images/git_ssh1.png">
 
+**Note:** I set the machine nickname (e.g., MacBook Pro 2017, Mac Pro, etc.) as the key title to easily identify the relevant key in the future.
 
 Next step is to update the `config` file on the `~/.ssh` folder. You can edit the `config` file with `vim`:
 
