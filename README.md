@@ -23,9 +23,7 @@ This document covers the following:
 
 This section focuses on the core git settings, such as global definitions and setting SSH with your Github account.
 
-Source: https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
-
-All the steps below, for setting the Git and SSH are done through the terminal (unless mentioned otherwise).
+All the settings in the sections are done through the command line (unless mentioned otherwise).
 
 Let's start by checking the `git` version running the following:
 
@@ -38,11 +36,11 @@ If this is a new computer or you did not set it before, it should prompt a windo
 
 ![image](https://user-images.githubusercontent.com/12760966/139562122-8a360563-89f0-4108-b916-ca20a4be7fe1.png)
 
-This required to run git, go ahead and install it. Once the `command line developer tools` installed, we can go back to the terminal and start set the git golbal settings.
+The `command line developer tools` is required to run git commands. Once installed, we can go back to the terminal and set the global git settings.
 
-#### Set Git global options
+### Set Git global options
 
-Git enables you to set both local and global options. Global settings, as the names implies, applied on all repositories by default. You can override the global settings on specific repos by using local settings. I define as global the following:
+Git enables setting both local and global options. The global options will be used as default settings any time triggering a new repository with the `git init` command. You can override the global settings on specific repo by using local settings. Below, we will define the following global settings:
 
 - Git user name
 - Git user email
@@ -50,25 +48,24 @@ Git enables you to set both local and global options. Global settings, as the na
 - Global git ignore file
 - Default editor (for merging comments)
 
-##### Set users
+### Set git user name and email
 
 Setting global user name and email by using the `config --global` command:
 ``` shell
 git config --global user.name "USER_NAME"
 git config --global user.email "YOUR_EAMIL@example.com"
 ```
+### Set default branch name
 
-##### Set default branch name
-
-Next, let's set the default branch name (e.g., that git will create when running `git init`) using the `init.defaultBranch` argument:
+Next, let's set the default branch name as `main` using the `init.defaultBranch` argument:
 
 ``` shell
 git config --global init.defaultBranch main
 ```
 
-##### Set global Git ignore file
+### Set global Git ignore file
 
-Setting a global `gitignore` file enables setting general ignore roles that will apply to all the repositories in your machine. First, let's create the global `.gitignore` file:
+The global `.gitignore` file enables you to set general ignore roles that will apply automatically to all repositories in your machine. This is useful when having repetitive cases of files you wish to ignore by default. A good example on Mac is the system file -.DS_Store, which is auto-generated on each folder, and you probably do not want to commit it. First, let's create the global `.gitignore` file using the `touch` command:
 
 ``` shell
 touch ~/.gitignore
@@ -80,21 +77,32 @@ Next, let's define this file as global:
 git config --global core.excludesFile ~/.gitignore
 ```
 
-Once the global `.gitignore` file is set, you just need to update the files you wish Git to ignore across all your local repositories. For example, the following will add `.DS_Store` to the global ignroe list:
+Once the global ignore file is set, we can start adding the files we want git to ignore systematically. For example, let's add the `.DS_Store` to the global ignore file:
 
 ``` shell 
 echo .DS_Store >> ~/.gitignore
 ```
+**Note:** You want to be careful about the files you add to the global ignore file. Unless it is applicable to all cases, such as the .DS_Store example, you should not add it to the global settings and define it locally to avoid a git disaster.
 
-##### Set default editor
+### Set default editor
 
-Git enables you to set the default shell code editor to create and edit your commit and tag messages with the `core.editor` argument:
+Git enables you to set the default shell code editor to create and edit your commit messages with the `core.editor` argument. Git supports the main command line editors such as `vim`, `emacs`, `nano`, etc. I set main as `vim`:
 
 ``` shell
 git config --global core.editor "vim"
 ```
 
-#### Set SSH
+### Review and modify global config settins
+
+By default, all the global settins saved to the `config` file under the `.ssh` folder. You can review the saved settings, modify and add new ones manually by editing the `config` file:
+
+
+``` shell
+vim ~/.ssh/config
+```
+
+
+## Set SSH with Github
 
 Setting `SSH` key required to sync your local git repositories with the `origin`. By default, when creating the SSH keys it writes the files under the `.ssh` folder, if exists, otherwise it writes it down under the root folder. It is more "clean" to have it under the `.ssh` folder, therefore, my settings below assume this folder exists. 
 
