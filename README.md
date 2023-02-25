@@ -98,7 +98,7 @@ By default, all the global settins saved to the `config` file under the `.ssh` f
 
 
 ``` shell
-vim ~/.ssh/config
+vim ~/.gitconfig
 ```
 
 
@@ -179,6 +179,15 @@ The Homebrew (or `brew`) enables you to install CL packages and tools for Mac. T
 ```shell
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
+
+After finishing the installation, you may need to run the following commends (follow the instractions at the end of the installation):
+
+``` shell
+(echo; echo ‘eval “$(/opt/homebrew/bin/brew shellenv)“’) >> /Users/USER_NAME/.zprofile
+eval “$(/opt/homebrew/bin/brew shellenv)”
+```
+
+
 
 More info available: https://brew.sh/
 
@@ -350,10 +359,10 @@ The default setting of `Oh My Zsh` stored on `~/.zshrc` and you can modify the d
 vim ~/.zshrc
 ```
 
-I use the `powerlevel10k` which can be install by cloning the Github repository:
+I use the `powerlevel10k` which can be install by cloning the Github repository (for `oh-my-zsh`):
 
 ``` zsh
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 And then change the theme setting on the `~/.zshrc` by `ZSH_THEME="powerlevel10k/powerlevel10k"`. After restarting the terminal, and reopening it you will a sequence of questions on that enables you to set the theme setting:
 
@@ -409,15 +418,19 @@ Once you reset your terminal, you should see be able to see the syntex highlight
 
 ### Install R and RStudio
 
-To set in your machine R and RStudio you should start first with installing R from CRAN. Go to https://cran.r-project.org/ and select `Download R for macOS` and select the release you wish to install and download. Once you finish to download the build you select open the `pkg` fild and start to install it:
+To set in your machine R and RStudio you should start first with installing R from CRAN. Go to https://cran.r-project.org/ and select `Download R for macOS` and select the release you wish to install and download. 
+
+**Note:** For macOS, there are two versions, depending on the type of your machine CPU - one for `Apple silicon arm64` and second for `Intel 64-bit`.
+
+Once you finish to download the build you select open the `pkg` fild and start to install it:
 
 ![image](https://user-images.githubusercontent.com/12760966/140316216-0e51e0b1-4f32-4a63-8913-160fb939895a.png)
 
 
 **Note:** Older releases available on [CRAN Archive](https://cran-archive.r-project.org/bin/macosx/).
 
-Once R installed, you can install RStudio - go to https://www.rstudio.com/products/rstudio/download/ and select the version and download it:
-![image](https://user-images.githubusercontent.com/12760966/140406353-912757a3-542c-46b5-92cb-c8a6803c2d69.png)
+Once R installed, you can install RStudio - go to https://posit.co website under Products tab and select [RStudio IDE](https://posit.co/downloads/) and select the version and download it:
+<img src="images/rstudio.png" width="100%" align="center"/></a>
 
 Once finish to download it move the application into the Application folder.
 
