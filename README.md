@@ -566,13 +566,13 @@ conda deactivate
 
 This section covers the installation and setting of additional tools and features such as screen spliting, shortcuts, etc.
 
-#### Spectacle
+#### Rectangle
 
-Spectacle is great tool for moving and resizing your windows. To install it go to https://www.spectacleapp.com/ and download it. Once installed you can modify the default setting:
+Rectangle is a free and open-source tool for moving and resizing windows in Mac with keyboard shoortcuts.
+To install it go to https://rectangleapp.com and download it. Once installed you can modify the default setting:
 
-![image](https://user-images.githubusercontent.com/12760966/140613227-e14dc19b-ba3e-435f-b67f-4f12bcc28c27.png)
+<img src="images/rectangleapp.png" width="80%" align="center"/></a>
 
-**Note:** Once installed, don't forget to select the checkbox `Launch Spectacle at login` to keep the the app active after reseting/shoutdown your machine.
 
 #### Keyboard Shortcuts
 
@@ -648,7 +648,7 @@ Where the `u` arugment enbales to define the port you want to clear by the USER 
 **Note:** Before you are clearing the port, make sure you do not need the applications on that port. 
 
 ### Resources
-* **Tutrial -** https://www.youtube.com/watch?v=qw--VYLpxG4&t=1073s&ab_channel=freeCodeCamp.org
+* **Tutorial -** https://www.youtube.com/watch?v=qw--VYLpxG4&t=1073s&ab_channel=freeCodeCamp.org
 * **PostgreSQL -** https://en.wikipedia.org/wiki/PostgreSQL
 * **Documentation -** https://www.postgresql.org/docs/
 
