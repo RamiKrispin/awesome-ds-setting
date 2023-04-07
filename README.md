@@ -180,7 +180,7 @@ The Homebrew (or `brew`) enables you to install CL packages and tools for Mac. T
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-After finishing the installation, you may need to run the following commends (follow the instractions at the end of the installation):
+After finishing the installation, you may need to run the following commends (follow the instructions at the end of the installation):
 
 ``` shell
 (echo; echo ‘eval “$(/opt/homebrew/bin/brew shellenv)“’) >> /Users/USER_NAME/.zprofile
