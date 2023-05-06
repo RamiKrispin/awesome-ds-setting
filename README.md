@@ -157,7 +157,7 @@ Where `your_ssh_key` is the private key file name
 
 Last, run the following to load the key:
 ```
-ssh-add -K ~/.ssh/your_ssh_key
+ssh-add --apple-use-keychain ~/.ssh/your_ssh_key
 ```
 
 #### Resources
