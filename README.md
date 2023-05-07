@@ -316,7 +316,7 @@ This section focuses on installing and setting tools for working on the terminal
 The `terminal` is the built-in emulator on mac. I personally love to work with `iTerm2` as it provides additional functionality and customization options. iTerm2 is available only for mac, and can be installed directly from the [iTerm2](https://iterm2.com/) website or via `homebrew`:
 
 ``` shell
-> brew cask install iterm2
+> brew install --cask iterm2
 .
 .
 .
