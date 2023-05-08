@@ -1,3 +1,5 @@
+WIP 🚧 🏗  pre spellcheck
+
 Hello 👋 
 
 After setting/reinstalling a couple of machines from scratch in the last few months, I decided for once and for all to document my default data science settings and tools I typically used. 
