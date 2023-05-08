@@ -417,6 +417,93 @@ After you reset your terminal, you should see be able to see the syntex highligh
 - `powerlevel10k` theme - https://github.com/romkatv/powerlevel10k
 - `zsh-syntax-highlighting` - https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#in-your-zshrc
 
+### Setting VScode
+
+VScode is a general-purpose IDE and my favorite development environment. VScode supports mutliple OS such as Lunix, MacOS, Windows, and Raspberry Pi. 
+
+Installing VScode is straightforward - go to the VScode website  https://code.visualstudio.com/ and click on the Download button (purple rectangle 👇🏼):
+<img src="images/vscode-download.png" width="100%" align="center"/></a>
+
+Download the installation file and follow the instructions. Here are the default extensions settings:
+
+``` json
+"extensions": [
+                "quarto.quarto",
+                "ms-azuretools.vscode-docker",
+                "ms-python.python",
+                "rdebugger.r-debugger",
+                "ms-vscode-remote.remote-containers",
+                "yzhang.markdown-all-in-one",
+                "reditorsupport.r",
+                "redhat.vscode-yaml",
+                "REditorSupport.r",
+                "REditorSupport.r-lsp", 
+                "RDebugger.r-debugger" 
+            ]
+```
+
+
+### Setting Python
+
+This section focuses on setting up a Python environment.
+
+#### Installing miniconda
+
+Miniconda is a great tool to set local Python environments. Go to the Miniconda installer [page](https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links) and download the installing package based on your operating system and Python version to install the most recent version. Once Miniconda installed you can install Python packaes with `conda`:
+
+``` shell
+conda install pandas
+```
+
+Likewise, you can use `conda` to create an environment:
+
+```
+conda create -n myenv python
+```
+
+#### Common conda commands
+
+Get a list of environments:
+
+``` shell
+conda info --envs
+```
+
+Create an environment and set the Python version:
+
+```
+conda create --name myenv python=3.9
+```
+
+Get package available versions:
+
+```
+conda search pandas
+```
+
+Activate an enviroment:
+
+``` sheel
+conda activate myenv
+```
+
+Get a list of installed packages in the environment:
+
+``` shell
+conda list
+```
+
+Deactivate the enviroment:
+
+```shell
+conda deactivate
+```
+
+### Shortcuts
+
+This section covers the installation and setting of additional tools and features such as screen spliting, shortcuts, etc.
+
+
 ### Install R and RStudio
 
 To set in your machine R and RStudio you should start first with installing R from CRAN. Go to https://cran.r-project.org/ and select `Download R for macOS` and select the release you wish to install and download. 
@@ -510,65 +597,7 @@ sudo ln -s /Applications/Julia-1.7.app/Contents/Resources/julia/bin/julia /usr/l
 WIP
 
 
-### Setting Python
 
-This section focuses on setting up a Python environment.
-
-#### Installing miniconda
-
-Miniconda is a great tool to set local Python environments. Go to the Miniconda installer [page](https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links) and download the installing package based on your operating system and Python version to install the most recent version. Once Miniconda installed you can install Python packaes with `conda`:
-
-``` shell
-conda install pandas
-```
-
-Likewise, you can use `conda` to create an environment:
-
-```
-conda create -n myenv python
-```
-
-#### Common conda commands
-
-Get a list of environments:
-
-``` shell
-conda info --envs
-```
-
-Create an environment and set the Python version:
-
-```
-conda create --name myenv python=3.9
-```
-
-Get package available versions:
-
-```
-conda search pandas
-```
-
-Activate an enviroment:
-
-``` sheel
-conda activate myenv
-```
-
-Get a list of installed packages in the environment:
-
-``` shell
-conda list
-```
-
-Deactivate the enviroment:
-
-```shell
-conda deactivate
-```
-
-### Shortcuts
-
-This section covers the installation and setting of additional tools and features such as screen spliting, shortcuts, etc.
 
 #### Rectangle
 
