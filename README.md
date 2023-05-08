@@ -134,7 +134,7 @@ The next step is to register the key on your Github account. On your account mai
 
 Next, set the key name under the title text box (purple rectangle 👇🏼), and paste your public key to the `key` box (turquoise rectangle 👇🏼):
 
-<img width="1054" alt="Screenshot_ssh2" src="images/git_ssh1.png">
+<img width="1054" alt="Screenshot_ssh2" src="images/git_ssh2.png">
 
 **Note:** I set the machine nickname (e.g., MacBook Pro 2017, Mac Pro, etc.) as the key title to easily identify the relevant key in the future.
 
