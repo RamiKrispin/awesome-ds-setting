@@ -26,7 +26,7 @@ This document covers the following:
 - [Setting Postgres](https://github.com/RamiKrispin/awesome-ds-setting#setting-postgres)
 
 
-## Setting Git and SSH
+## Set Git and SSH
 
 This section focuses on the core git settings, such as global definitions and setting SSH with your Github account.
 
@@ -109,7 +109,7 @@ vim ~/.gitconfig
 ```
 
 
-## Set SSH with Github
+### Set SSH with Github
 
 Setting `SSH` key required to sync your local git repositories with the `origin`. By default, when creating the SSH keys it writes the files under the `.ssh` folder, if exists, otherwise it writes it down under the root folder. It is more "clean" to have it under the `.ssh` folder, therefore, my settings below assume this folder exists. 
 
@@ -167,7 +167,7 @@ Last, run the following to load the key:
 ssh-add --apple-use-keychain ~/.ssh/your_ssh_key
 ```
 
-#### Resources
+### Resources
 
 - Github documentation - https://docs.github.com/en/enterprise-server@3.0/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
 - `ssh-keyget` arguments -  https://www.ssh.com/academy/ssh/keygen
@@ -175,11 +175,11 @@ ssh-add --apple-use-keychain ~/.ssh/your_ssh_key
 - Setting Git ignore - https://www.atlassian.com/git/tutorials/saving-changes/gitignore
 - Initial Git setup - https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
 
-### Install Command Lines Tools
+## Install Command Lines Tools
 
 This section covers core command lines tools.
 
-#### Homebrew
+### Homebrew
 
 The Homebrew (or `brew`) enables you to install CL packages and tools for Mac. To install `brew` run from the terminal:
 
@@ -198,7 +198,7 @@ eval “$(/opt/homebrew/bin/brew shellenv)”
 
 More info available: https://brew.sh/
 
-#### jq
+### jq
 
 The `jq` is a lightweight and flexible command-line JSON processor. You can install it with `brew`:
 
@@ -220,7 +220,7 @@ Go to [Docker website](https://docs.docker.com/get-started/get-docker/) and foll
 
 **Note:** Docker Desktop required license
 
-### Setting Terminal 
+### Set Up Terminal 
 
 This section focuses on installing and setting tools for working on the terminal. 
 
@@ -323,14 +323,14 @@ After you reset your terminal, you should see be able to see the syntex highligh
 <img src="images/terminal_highlight.png" width="65%" align="center"/></a>
 
 
-#### Resources
+### Resources
 - `iTerm2` - https://iterm2.com/index.html
 - `oh my zsh` - https://ohmyz.sh/
 - freeCodeCamp blog post - https://www.freecodecamp.org/news/how-to-configure-your-macos-terminal-with-zsh-like-a-pro-c0ab3f3c1156/
 - `powerlevel10k` theme - https://github.com/romkatv/powerlevel10k
 - `zsh-syntax-highlighting` - https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#in-your-zshrc
 
-### Setting VScode
+## Install VScode
 
 VScode is a general-purpose IDE and my favorite development environment. VScode supports mutliple OS such as Lunix, MacOS, Windows, and Raspberry Pi. 
 
@@ -339,7 +339,7 @@ Installing VScode is straightforward - go to the VScode website  https://code.vi
 
 Download the installation file and follow the instructions. 
 
-### Setting Up Python
+## Set Up Python
 
 This section focuses on setting up tools for working with Python locally (without Docker container) with UV and miniconda. If you are intrested in setting up a dockerized Python/R development environment with VScode, Docker, and the Dev Containers extension, please check out the following tutorials:
 - Python - https://github.com/RamiKrispin/vscode-python
@@ -350,7 +350,7 @@ Also, you can leverage the following VScode templates:
 - Python (using uv) - https://github.com/RamiKrispin/vscode-python-uv-template
 - R - https://github.com/RamiKrispin/vscode-r-template
 
-#### Installing UV
+### Install UV
 
 UV is an extremely fast Python package and project manager, written in Rust. Installing UV is straightforward and I recommend checking the project [documentation](https://docs.astral.sh/uv/getting-started/installation/#__tabbed_1_1).
 
@@ -369,7 +369,7 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 ```
 
 
-#### Installing miniconda
+### Install miniconda
 
 Miniconda is an alternative tool to set up local Python environments. Go to the Miniconda installer [page](https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links) and download the installing package based on your operating system and Python version to install the most recent version. Once Miniconda installed you can install Python packaes with `conda`:
 
@@ -383,7 +383,7 @@ Likewise, you can use `conda` to create an environment:
 conda create -n myenv python
 ```
 
-##### Common conda commands
+#### Common conda commands
 
 Get a list of environments:
 
@@ -422,7 +422,7 @@ conda deactivate
 ```
 
 
-#### Installing Ruff
+### Install Ruff
 
 Ruff is an extremely fast Python linter and code formatter, written in Rust.
 
@@ -439,13 +439,13 @@ Likewise, on Windows using `powershell`:
 powershell -c "irm https://astral.sh/ruff/install.ps1 | iex"
 ```
 
-#### Resources
+### Resources
 - UV documentation - https://docs.astral.sh/uv/
 - Miniconda - https://docs.anaconda.com/miniconda/
 - Ruff documentation - https://docs.astral.sh/ruff/
 
 
-### Install R and Positron
+## Install R and Positron
 
 To set in your machine [R](https://cran.r-project.org/index.html) and [Positron](https://positron.posit.co/) you should start first with installing R from CRAN. Go to https://cran.r-project.org/ and select the relevent OS:
 
@@ -466,28 +466,7 @@ Once R installed, you can install Positron. Go to https://positron.posit.co/down
 
 After finish to download it move the application into the Application folder.
 
-
-#### Install XQuartz
-
-The XQuartz is an open-source project that provides required for graphic applications (X11) for macOS (similar to the X.Org X Window System functionality). To install it go to https://www.xquartz.org/ - download and install it.
-
-#### Rectangle
-
-Rectangle is a free and open-source tool for moving and resizing windows in Mac with keyboard shoortcuts.
-To install it go to https://rectangleapp.com and download it. Once installed you can modify the default setting:
-
-<img src="images/rectangleapp.png" width="80%" align="center"/></a>
-
-**Note:** This functionality is built-in with macOS Sequoia, and it may be redundant to install Rectangle
-#### Keyboard Shortcuts
-
-* Change language - if you are using more than one language, you can add a keyboard shortcut for switching between them. Go to `System Preferences...` -> `keyboard` and select the shortcut tab. Under the `Input Sources` tick the `Select the previous input source option`:
-
-![image](https://user-images.githubusercontent.com/12760966/140625490-3b688dee-fc09-4252-9626-05d10094187e.png)
-
-**Note:** that you can modify the keyboard shortcut by clicking shortcut definition in that row
-
-### Installing Postgres
+## Install Postgres
 
 PostgreSQL supprts most of the common OS such as Windows, macOS, Linux, etc.
 
@@ -528,7 +507,7 @@ echo "export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/14/bin/" >>
 ```
 
 
-#### Clear port
+### Clear port
 
 If the port you set for the Postgres server is in use you should expect to get the following message when trying to start the server:
 
@@ -557,8 +536,29 @@ Where the `u` arugment enbales to define the port you want to clear by the USER 
 * **PostgreSQL -** https://en.wikipedia.org/wiki/PostgreSQL
 * **Documentation -** https://www.postgresql.org/docs/
 
+## Miscellaneous
 
-## Installing Draw.io Desktop
+### Install XQuartz
+
+The XQuartz is an open-source project that provides required for graphic applications (X11) for macOS (similar to the X.Org X Window System functionality). To install it go to https://www.xquartz.org/ - download and install it.
+
+### Rectangle
+
+Rectangle is a free and open-source tool for moving and resizing windows in Mac with keyboard shoortcuts.
+To install it go to https://rectangleapp.com and download it. Once installed you can modify the default setting:
+
+<img src="images/rectangleapp.png" width="80%" align="center"/></a>
+
+**Note:** This functionality is built-in with macOS Sequoia, and it may be redundant to install Rectangle
+#### Keyboard Shortcuts
+
+* Change language - if you are using more than one language, you can add a keyboard shortcut for switching between them. Go to `System Preferences...` -> `keyboard` and select the shortcut tab. Under the `Input Sources` tick the `Select the previous input source option`:
+
+![image](https://user-images.githubusercontent.com/12760966/140625490-3b688dee-fc09-4252-9626-05d10094187e.png)
+
+**Note:** that you can modify the keyboard shortcut by clicking shortcut definition in that row
+
+### Install Draw.io Desktop
 
 The `drawio-desktop` is a desktop version of the [diagrams](https://www.diagrams.net/) app for creating diagrams and workflow charts. The desktop version, per the [project repository](https://github.com/jgraph/drawio-desktop), is designed to be completely isolated from the Internet, apart from the update process.
 
@@ -575,6 +575,6 @@ For macOS users, once download the `dmp` file and open it, move the build to the
 
 ### Resources
 
-* **Draw.io documentation -** https://www.diagrams.net/
-* **drawio-desktop repository -** https://github.com/jgraph/drawio-desktop
-* **Online version -** https://app.diagrams.net/
+- Draw.io documentation - https://www.diagrams.net/
+- drawio-desktop repository - https://github.com/jgraph/drawio-desktop
+- Online version - https://app.diagrams.net/
