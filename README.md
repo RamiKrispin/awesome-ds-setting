@@ -18,12 +18,13 @@ This document covers the following:
 - [Set Up Git and SSH](https://github.com/RamiKrispin/awesome-ds-setting/blob/main/README.md#set-up-git-and-ssh)
 - [Command Lines Tools](https://github.com/RamiKrispin/awesome-ds-setting/blob/main/README.md#command-lines-tools)
 - [Install Docker](https://github.com/RamiKrispin/awesome-ds-setting/blob/main/README.md#install-docker)
-- [Set Terminal](https://github.com/RamiKrispin/awesome-ds-setting#terminal-setting)
+- [Set Terminal Tools](https://github.com/RamiKrispin/awesome-ds-setting#set-terminal-tools)
 - [Set VScode](https://github.com/RamiKrispin/awesome-ds-setting#set-vscode)
-- [Set Python](https://github.com/RamiKrispin/awesome-ds-setting#setting-python)
-- [Install R and Positron](https://github.com/RamiKrispin/awesome-ds-setting/blob/main/README.md#install-r-and-rstudio)
+- [Set Python](https://github.com/RamiKrispin/awesome-ds-setting#set-python)
+- [Install R and Positron](https://github.com/RamiKrispin/awesome-ds-setting/blob/main/README.md#install-r-and-positron)
+- [Install Postgres](https://github.com/RamiKrispin/awesome-ds-setting#install-postgres)
 - [Shortcuts](https://github.com/RamiKrispin/awesome-ds-setting/blob/main/README.md#shortcuts)
-- [Setting Postgres](https://github.com/RamiKrispin/awesome-ds-setting#setting-postgres)
+
 
 
 ## Set Up Git and SSH
@@ -220,7 +221,7 @@ Go to [Docker website](https://docs.docker.com/get-started/get-docker/) and foll
 
 **Note:** Docker Desktop requires a license for enterprise use. Please check before the license agreement
 
-## Setting Terminal 
+## Set Terminal Tools
 
 This section focuses on installing and setting tools for working on the terminal. 
 
