@@ -24,6 +24,7 @@ This document covers the following:
 - [Install R and Positron](https://github.com/RamiKrispin/awesome-ds-setting/blob/main/README.md#install-r-and-positron)
 - [Install Postgres](https://github.com/RamiKrispin/awesome-ds-setting#install-postgres)
 - [Miscellaneous](https://github.com/RamiKrispin/awesome-ds-setting#miscellaneous)
+- [License](https://github.com/RamiKrispin/awesome-ds-setting#license)
 
 
 ## Set Git and SSH
@@ -47,7 +48,7 @@ The `command line developer tools` is required to run git commands. Once install
 
 ### Set Git global options
 
-Git enables setting both local and global options. The global options will be used as default settings any time triggering a new repository with the `git init` command. You can override the global settings on specific repo by using local settings. Below, we will define the following global settings:
+Git enables setting both local and global options. The global options will be used as default settings any time a new repository with the `git init` command is triggered. You can override the global settings on a specific repo by using local settings. Below, we will define the following global settings:
 
 - Git user name
 - Git user email
@@ -72,7 +73,7 @@ git config --global init.defaultBranch main
 
 ### Set global Git ignore file
 
-The global `.gitignore` file enables you to set general ignore roles that will apply automatically to all repositories in your machine. This is useful when having repetitive cases of files you wish to ignore by default. A good example on Mac is the system file -.DS_Store, which is auto-generated on each folder, and you probably do not want to commit it. First, let's create the global `.gitignore` file using the `touch` command:
+The global `.gitignore` file enables you to set general ignore roles that will apply automatically to all repositories in your machine. This is useful when having repetitive cases of files you wish to ignore by default. A good example on Mac is the system file - `.DS_Store`, which is auto-generated on each folder, and you probably do not want to commit it. First, let's create the global `.gitignore` file using the `touch` command:
 
 ``` shell
 touch ~/.gitignore
@@ -89,19 +90,19 @@ Once the global ignore file is set, we can start adding the files we want git to
 ``` shell 
 echo .DS_Store >> ~/.gitignore
 ```
-**Note:** You want to be careful about the files you add to the global ignore file. Unless it is applicable to all cases, such as the .DS_Store example, you should not add it to the global settings and define it locally to avoid a git disaster.
+**Note:** You want to be careful about the files you add to the global ignore file. Unless it is applicable to all cases, such as the `.DS_Store` example, you should not add it to the global settings and define it locally to avoid a git disaster.
 
 ### Set default editor
 
-Git enables you to set the default shell code editor to create and edit your commit messages with the `core.editor` argument. Git supports the main command line editors such as `vim`, `emacs`, `nano`, etc. I set main as `vim`:
+Git enables you to set the default shell code editor to create and edit your commit messages with the `core.editor` argument. Git supports the main command line editors such as `vim`, `emacs`, `nano`, etc. I set the default CLI editor as `vim`:
 
 ``` shell
 git config --global core.editor "vim"
 ```
 
-### Review and modify global config settins
+### Review and modify global config settings
 
-By default, all the global settins saved to the `config` file under the `.ssh` folder. You can review the saved settings, modify and add new ones manually by editing the `config` file:
+By default, all the global settings are saved to the `config` file under the `.ssh` folder. You can review the saved settings and modify them manually by editing the `config` file:
 
 
 ``` shell
@@ -111,7 +112,7 @@ vim ~/.gitconfig
 
 ### Set SSH with Github
 
-Setting `SSH` key required to sync your local git repositories with the `origin`. By default, when creating the SSH keys it writes the files under the `.ssh` folder, if exists, otherwise it writes it down under the root folder. It is more "clean" to have it under the `.ssh` folder, therefore, my settings below assume this folder exists. 
+Setting `SSH` key required to sync your local git repositories with the `origin`. By default, when creating the SSH keys, it writes the files under the `.ssh` folder if they exist. Otherwise, it is written down under the root folder. It is more "clean" to have it under the `.ssh` folder. Therefore, my settings below assume this folder exists. 
 
 Let's start by creating the `.ssh` folder:
 
@@ -121,20 +122,20 @@ mkdir ~/.ssh
 
 The `ssh-keyget` command creates the SSH keys files:
 
-To set SSH key on your local machine you need to use `ssh-keyget`:
+To set the SSH key on your local machine you need to use `ssh-keyget`:
 
 ``` shell
 ssh-keygen -t ed25519 -C "YOUR_EAMIL@example.com"
 ```
-**Note:** The `-t` argument defines the algorithm type for the authentication key, in this case I used `ed25519` and the `-C` argument enables adding comment,in this case the user name email for reference.
+**Note:** The `-t` argument defines the algorithm type for the authentication key. I used `ed25519`, and the `-C` argument enables adding comments, in this case, the user name email for reference.
 
-After runngint the `ssh-keygen` command, it will prompt for setting file name and password (optional). By default it will save it under the root folder. 
+After runngint the `ssh-keygen` command, it will prompt for setting file name and password (optional). By default, it will be saved under the root folder. 
 
-**Note:** this process will generate two files:
-- `your_ssh_key` is the private key, you should not expose it
-- `your_ssh_key.pub` is the public key which will be used to to set the SSH on Github
+**Note:** This process will generate two files:
+- `your_ssh_key` is the private key. You should not expose it
+- `your_ssh_key.pub` is the public key that will be used to set the SSH on Github
 
-The next step is to register the key on your Github account. On your account main page go to the `Settings` menu and select on the main menu `SSH and GPG keys` (purple rectangle 👇🏼) and click on the `New SSH key` (yellow rectangle 👇🏼):
+The next step is to register the key on your Github account. On your account main page go to the `Settings` menu and select on the main menu `SSH and GPG keys` (purple rectangle 👇🏼), and click on the `New SSH key` (yellow rectangle 👇🏼):
 
 <img width="1054" alt="Screenshot_ssh1" src="images/git_ssh1.png">
 
@@ -145,13 +146,13 @@ Next, set the key name under the title text box (purple rectangle 👇🏼), and
 
 **Note:** I set the machine nickname (e.g., MacBook Pro 2017, Mac Pro, etc.) as the key title to easily identify the relevant key in the future.
 
-Next step is to update the `config` file on the `~/.ssh` folder. You can edit the `config` file with `vim`:
+The next step is to update the `config` file on the `~/.ssh` folder. You can edit the `config` file with `vim`:
 
 ``` shell
 vim ~/.ssh/config 
 ```
 
-and add somewhere on the file the following code:
+And add somewhere on the file the following code:
 
 ``` shell
 Host *
@@ -171,13 +172,13 @@ ssh-add --apple-use-keychain ~/.ssh/your_ssh_key
 
 - Github documentation - https://docs.github.com/en/enterprise-server@3.0/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
 - `ssh-keyget` arguments -  https://www.ssh.com/academy/ssh/keygen
-- A great video toturial about setting SSH:  https://www.youtube.com/watch?v=RGOj5yH7evk&t=1230s&ab_channel=freeCodeCamp.org
+- A great video tutorial about setting SSH:  https://www.youtube.com/watch?v=RGOj5yH7evk&t=1230s&ab_channel=freeCodeCamp.org
 - Setting Git ignore - https://www.atlassian.com/git/tutorials/saving-changes/gitignore
 - Initial Git setup - https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
 
 ## Install Command Lines Tools
 
-This section covers core command lines tools.
+This section covers core command line tools.
 
 ### Homebrew
 
@@ -187,7 +188,7 @@ The Homebrew (or `brew`) enables you to install CL packages and tools for Mac. T
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-After finishing the installation, you may need to run the following commends (follow the instractions at the end of the installation):
+After finishing the installation, you may need to run the following commands (follow the instructions at the end of the installation):
 
 ``` shell
 (echo; echo ‘eval “$(/opt/homebrew/bin/brew shellenv)“’) >> /Users/USER_NAME/.zprofile
@@ -213,12 +214,12 @@ To spin a VM locally to run Docker we will set [Docker Desktop](https://www.dock
 
 #### Install Docker Desktop
 
-Go to [Docker website](https://docs.docker.com/get-started/get-docker/) and follow the intallation instractions according to your OS:
+Go to [Docker website](https://docs.docker.com/get-started/get-docker/) and follow the installation instructions according to your OS:
 
 <img src="images/docker-desktop.png" width="80%" align="center"/></a>
 
 
-**Note:** Docker Desktop required license
+**Note:** Docker Desktop may require a license when used in enterprise settings
 
 ### Set Up Terminal 
 
@@ -226,7 +227,7 @@ This section focuses on installing and setting tools for working on the terminal
 
 #### Install iTerm2
 
-The `terminal` is the built-in emulator on mac. I personally love to work with `iTerm2` as it provides additional functionality and customization options. iTerm2 is available only for mac, and can be installed directly from the [iTerm2](https://iterm2.com/) website or via `homebrew`:
+The `terminal` is the built-in emulator on Mac. I personally love to work with `iTerm2` as it provides additional functionality and customization options. iTerm2 is available only for Mac and can be installed directly from the [iTerm2](https://iterm2.com/) website or via `homebrew`:
 
 ``` shell
 > brew install --cask iterm2
@@ -240,7 +241,7 @@ The `terminal` is the built-in emulator on mac. I personally love to work with `
 
 #### Install zsh
 
-The next step is to install Z shell or `zsh`. The `zsh` is shell flavor built on top of `bash`, providing a variety of add-in tools on the terminal. We will use `homebrew` again to install `zsh`:
+The next step is to install Z shell or `zsh`. The `zsh` is a shell flavor built on top of `bash`, providing a variety of add-in tools on the terminal. We will use `homebrew` again to install `zsh`:
 
 ``` shell
 > brew install zsh
@@ -254,31 +255,31 @@ The next step is to install Z shell or `zsh`. The `zsh` is shell flavor built on
 
 #### Install and Set Oh-My-Zsh
 
-After installing the `zsh` we will install `oh-my-zsh`, an open-source framework for managing `zsh` configuration. We wiil install it with the `curl` command:
+After installing the `zsh` we will install `oh-my-zsh`, an open-source framework for managing `zsh` configuration. We will install it with the `curl` command:
 
 ``` shell
  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-You can note that your terminal view changed (you may need to reset your terminal to see the changes) and the default command line cursor looks like:
+You can note that your terminal view changed (you may need to reset your terminal to see the changes), and the default command line cursor looks like this:
 
 ``` zsh
 ➜  ~
 ```
 
-The default setting of `Oh My Zsh` stored on `~/.zshrc` and you can modify the default theme by editing the file:
+The default setting of `Oh My Zsh` is stored on `~/.zshrc`, and you can modify the default theme by editing the file:
 
 ```
 vim ~/.zshrc
 ```
 
-I use the `powerlevel10k` which can be install by cloning the Github repository (for `oh-my-zsh`):
+I use the `powerlevel10k`, which can be installed by cloning the Github repository (for `oh-my-zsh`):
 
 ``` zsh
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 
-And then change the theme setting on the `~/.zshrc` by `ZSH_THEME="powerlevel10k/powerlevel10k"`. After restarting the terminal, and reopening it you will a sequence of questions on that enables you to set the theme setting:
+And then change the theme setting on the `~/.zshrc` by `ZSH_THEME="powerlevel10k/powerlevel10k"`. After restarting the terminal, and reopening it you will a sequence of questions that enables you to set the theme setting:
 
 ``` zsh
 
@@ -293,7 +294,7 @@ And then change the theme setting on the `~/.zshrc` by `ZSH_THEME="powerlevel10k
 Choice [ynq]:
 ```
 
-**Note:** the `Meslo Nerd` font is required to display symbles that is being used by the  `powerlevel10k` theme
+**Note:** the `Meslo Nerd` font is required to display symbols that are being used by the  `powerlevel10k` theme
 
 You can always modify your selection by using:
 
@@ -301,7 +302,7 @@ You can always modify your selection by using:
  p10k configure
  ```
  
- The terminal after adding the `powerlevel10k` theme looks like:
+ The terminal after adding the `powerlevel10k` theme looks like this:
  
  <img src="images/terminal.png" width="65%" align="center"/></a>
 
@@ -311,14 +312,14 @@ Installing `zsh-syntax-highlighting` to add code highlight on the terminal:
 brew install zsh-syntax-highlighting
 ```
 
-After the installation is done you will need to clone the source code. I set the destination as home folder, defining the traget folder hidden:
+After the installation is done, you will need to clone the source code. I set the destination as the home folder, defining the target folder hidden:
 
 ``` zsh
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.zsh-syntax-highlighting
 echo "source $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
 ```
 
-After you reset your terminal, you should see be able to see the syntex highlight in green (in my case):
+After you reset your terminal, you should be able to see the syntex highlight in green (in my case):
 
 <img src="images/terminal_highlight.png" width="65%" align="center"/></a>
 
@@ -341,7 +342,7 @@ Download the installation file and follow the instructions.
 
 ## Set Up Python
 
-This section focuses on setting up tools for working with Python locally (without Docker container) with UV and miniconda. If you are intrested in setting up a dockerized Python/R development environment with VScode, Docker, and the Dev Containers extension, please check out the following tutorials:
+This section focuses on setting up tools for working with Python locally (without Docker container) with UV and miniconda. If you are interested in setting up a dockerized Python/R development environment with VScode, Docker, and the Dev Containers extension, please check out the following tutorials:
 - Python - https://github.com/RamiKrispin/vscode-python
 - R - https://github.com/RamiKrispin/vscode-r
 
@@ -352,9 +353,9 @@ Also, you can leverage the following VScode templates:
 
 ### Install UV
 
-UV is an extremely fast Python package and project manager, written in Rust. Installing UV is straightforward and I recommend checking the project [documentation](https://docs.astral.sh/uv/getting-started/installation/#__tabbed_1_1).
+UV is an extremely fast Python package and project manager written in Rust. Installing UV is straightforward, and I recommend checking the project [documentation](https://docs.astral.sh/uv/getting-started/installation/#__tabbed_1_1).
 
-On Mac and Linux you can use `curl`:
+On Mac and Linux, you can use `curl`:
 ```shell
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
@@ -371,7 +372,7 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 
 ### Install miniconda
 
-Miniconda is an alternative tool to set up local Python environments. Go to the Miniconda installer [page](https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links) and download the installing package based on your operating system and Python version to install the most recent version. Once Miniconda installed you can install Python packaes with `conda`:
+Miniconda is an alternative tool for setting up local Python environments. Go to the Miniconda installer [page](https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links) and download the installing package based on your operating system and Python version to install the most recent version. Once Miniconda is installed, you can install Python libraries with `conda`:
 
 ``` shell
 conda install pandas
@@ -397,13 +398,13 @@ Create an environment and set the Python version:
 conda create --name myenv python=3.9
 ```
 
-Get package available versions:
+Get library available versions:
 
 ```
 conda search pandas
 ```
 
-Activate an enviroment:
+Activate an environment:
 
 ``` sheel
 conda activate myenv
@@ -415,7 +416,7 @@ Get a list of installed packages in the environment:
 conda list
 ```
 
-Deactivate the enviroment:
+Deactivate the environment:
 
 ```shell
 conda deactivate
@@ -430,11 +431,11 @@ You can install Ruff directly from PyPi using `pip`:
 ```shell
 pip install ruff
 ```
-On Mac and Linux using `curl`:
+On Mac and Linux, using `curl`:
 ```shell
 curl -LsSf https://astral.sh/ruff/install.sh | sh
 ```
-Likewise, on Windows using `powershell`:
+Likewise, on Windows, using `powershell`:
 ```shell
 powershell -c "irm https://astral.sh/ruff/install.ps1 | iex"
 ```
@@ -447,35 +448,35 @@ powershell -c "irm https://astral.sh/ruff/install.ps1 | iex"
 
 ## Install R and Positron
 
-To set in your machine [R](https://cran.r-project.org/index.html) and [Positron](https://positron.posit.co/) you should start first with installing R from CRAN. Go to https://cran.r-project.org/ and select the relevent OS:
+To set up your machine [R](https://cran.r-project.org/index.html) and [Positron](https://positron.posit.co/), you should start by installing R from CRAN. Go to https://cran.r-project.org/ and select the relevant OS:
 
 <img src="images/install-R.png" width="100%" align="center"/></a>
 
-**Note:** For macOS, there are two versions, depending on the type of your machine CPU - one for `Apple silicon arm64` and second for `Intel 64-bit`.
+**Note:** For macOS, there are two versions, depending on the type of your machine CPU - one for `Apple silicon arm64` and a second for `Intel 64-bit`.
 
-Once you finish to download the build you select open the `pkg` fild and start to install it:
+Once you finish downloading the build, open the `pkg` file and start to install it:
 
 <img src="images/install-R2.png" width="100%" align="center"/></a>
 
 
 **Note:** Older releases available on [CRAN Archive](https://cran-archive.r-project.org/bin/).
 
-Once R installed, you can install Positron. Go to https://positron.posit.co/download.html and select the relevent OS version and download the relevent file:
+Once R is installed, you can install Positron. Go to https://positron.posit.co/download.html, select the relevant OS version and download it:
 <img src="images/install-positron.png" width="90%" align="center"/></a>
 
 
-After finish to download it move the application into the Application folder.
+After downloading it, move the application into the Application folder (on Mac).
 
 ## Install Postgres
 
-PostgreSQL supprts most of the common OS such as Windows, macOS, Linux, etc.
+PostgreSQL supports most common OS systems, such as Windows, macOS, Linux, etc.
 
-To download go to Postgres project [website](https://www.postgresql.org/) and navigate to the **Downlaod** tab and select your OS, which will naviage it to the OS download page, and follow the instraction:
+To download, go to Postgres project [website](https://www.postgresql.org/) and navigate to the **Download** tab, and select your OS, which will navigate it to the OS download page, and follow the instructions:
 
  [<img src="images/download_page.png" width="80%" align="center"/></a>](https://www.postgresql.org/download/)
 
 
-On mac I highly recommand to install PostgreSQL through the [Postgres.app](https://postgresapp.com/):
+On Mac, I highly recommend installing PostgreSQL through the [Postgres.app](https://postgresapp.com/):
 
  [<img src="images/postgres_app.png" width="80%" align="center"/></a>](https://postgresapp.com/)
 
@@ -484,14 +485,14 @@ When opening the app, you should have a default server set to port 5432 (make su
 
 <img src="images/app_unactive.png" width="60%" align="center"/></a>
 
-To launch the server click on the `start` button:
+To launch the server, click on the `start` button:
 
 <img src="images/app_active.png" width="60%" align="center"/></a>
 
-By default, the server will create three databases - `postgres`, `YOUR_USER_NAME`, and `template1`. You can add additional server (or remove) by clicking the `+` or `-` symbols on the left botton.
+By default, the server will create three databases - `postgres`, `YOUR_USER_NAME`, and `template1`. You can add an additional servers (or remove them) by clicking the `+` or `-` symbols on the left button.
 
 
-To run Postgres from the terminal you will have to set define the path of the app on your `zshrc` file (on mac) by adding the following line:
+To run Postgres from the terminal, you will have to define the path of the app on your `zshrc` file (on Mac) by adding the following line:
 
 ``` zsh
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/14/bin/
@@ -499,7 +500,7 @@ export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/14/bin/
 
 Where `/Applications/Postgres.app/Contents/Versions/14/bin/` is the local path on my machine.
 
-Alternativly, you can set the alias from the terminal by running the following"
+Alternatively, you can set the alias from the terminal by running the following:
 
 
 ``` zsh
@@ -509,11 +510,11 @@ echo "export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/14/bin/" >>
 
 ### Clear port
 
-If the port you set for the Postgres server is in use you should expect to get the following message when trying to start the server:
+If the port you set for the Postgres server is in use, you should expect to get the following message when trying to start the server:
 
 <img src="images/port_in_used.png" width="60%" align="center"/></a>
 
-This mean that the port is either used by other Postgres server or other application. To check what ports in use and by which applications you can use the `lsof` function on the terimnal:
+This means that the port is either used by other Postgres servers or other applications. To check what ports are in use and by which applications you can use the `lsof` function on the terminal:
 
 ``` zsh
 sudo lsof -i :5432                                                                                           COMMAND  PID     USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
@@ -521,7 +522,7 @@ postgres 124 postgres    7u  IPv6 0xc250a5ea155736fb      0t0  TCP *:postgresql 
 postgres 124 postgres    8u  IPv4 0xc250a5ea164aa3b3      0t0  TCP *:postgresql (LISTEN)
 ```
 
-Where the `i` argument enables to search by port number, in the example above by `5432`. As can see from the output, the port is used by other Posrgres server. You can clear the port by using the `pkill` command:
+The `i` argument enables the search by port number, as shown in the example above by `5432`. As can be seen from the output, the port is used by other Postgres servers. You can clear the port by using the `pkill` command:
 
 ``` zsh
 sudo pkill -u postgres
@@ -529,7 +530,7 @@ sudo pkill -u postgres
 
 Where the `u` arugment enbales to define the port you want to clear by the USER field, in this case `postgres`.
 
-**Note:** Before you are clearing the port, make sure you do not need the applications on that port. 
+**Note:** Before you clear the port, make sure you do not need the applications on that port. 
 
 ### Resources
 * **Tutorial -** https://www.youtube.com/watch?v=qw--VYLpxG4&t=1073s&ab_channel=freeCodeCamp.org
@@ -540,23 +541,23 @@ Where the `u` arugment enbales to define the port you want to clear by the USER 
 
 ### Install XQuartz
 
-The XQuartz is an open-source project that provides required for graphic applications (X11) for macOS (similar to the X.Org X Window System functionality). To install it go to https://www.xquartz.org/ - download and install it.
+The XQuartz is an open-source project that provides required graphic applications (X11) for macOS (similar to the X.Org X Window System functionality). To install it, go to https://www.xquartz.org/ - download and install it.
 
 ### Rectangle
 
 Rectangle is a free and open-source tool for moving and resizing windows in Mac with keyboard shoortcuts.
-To install it go to https://rectangleapp.com and download it. Once installed you can modify the default setting:
+To install it, go to https://rectangleapp.com and download it. Once installed, you can modify the default setting:
 
 <img src="images/rectangleapp.png" width="80%" align="center"/></a>
 
 **Note:** This functionality is built-in with macOS Sequoia, and it may be redundant to install Rectangle
 #### Keyboard Shortcuts
 
-* Change language - if you are using more than one language, you can add a keyboard shortcut for switching between them. Go to `System Preferences...` -> `keyboard` and select the shortcut tab. Under the `Input Sources` tick the `Select the previous input source option`:
+* Change language - if you are using more than one language, you can add a keyboard shortcut to switch between them. Go to `System Preferences...` -> `keyboard` and select the shortcut tab. Under the `Input Sources` tick the `Select the previous input source option`:
 
 ![image](https://user-images.githubusercontent.com/12760966/140625490-3b688dee-fc09-4252-9626-05d10094187e.png)
 
-**Note:** that you can modify the keyboard shortcut by clicking shortcut definition in that row
+**Note:** You can modify the keyboard shortcut by clicking the shortcut definition in that row
 
 ### Install Draw.io Desktop
 
@@ -565,11 +566,11 @@ The `drawio-desktop` is a desktop version of the [diagrams](https://www.diagrams
 
 <p class='image-right'><img src="images/draw.io pic.svg" width="100%" align="center"/></a> Image credit: https://www.diagrams.net/</p>
 
-To install the desktop version go to the [project repository](https://github.com/jgraph/drawio-desktop) and select the version you wish to install under the [releases](https://github.com/jgraph/drawio-desktop/releases) section:
+To install the desktop version, go to the [project repository](https://github.com/jgraph/drawio-desktop) and select the version you wish to install under the [releases](https://github.com/jgraph/drawio-desktop/releases) section:
 
 <img src="images/draw.io releases.png" width="100%" align="center"/></a>
 
-For macOS users, once download the `dmp` file and open it, move the build to the applications folder:
+For macOS users, once you download the `dmp` file and open it, move the build to the applications folder:
 
 <img src="images/draw.io app.png" width="60%" align="center"/></a>
 
@@ -578,3 +579,7 @@ For macOS users, once download the `dmp` file and open it, move the build to the
 - Draw.io documentation - https://www.diagrams.net/
 - drawio-desktop repository - https://github.com/jgraph/drawio-desktop
 - Online version - https://app.diagrams.net/
+
+
+## License
+This tutorial is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/) License.
