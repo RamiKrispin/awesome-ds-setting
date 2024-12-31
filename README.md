@@ -15,15 +15,15 @@ That includes installing programming languages such as Python 🐍 and R. In add
 **Update:** This setting is up-to-date with [macOS Sequoia](https://www.apple.com/macos/macos-sequoia/) ❤️. However, most of the tools in this document should be OS agnostic (e.g., Windows, Linux, etc.) with some minor modifications.
 
 This document covers the following:
-- [Setting Git and SSH](https://github.com/RamiKrispin/awesome-ds-setting/blob/main/README.md#setting-git-and-ssh)
-- [Install Command Lines Tools](https://github.com/RamiKrispin/awesome-ds-setting/blob/main/README.md#install-command-lines-tools)
+- [Set Up Git and SSH](https://github.com/RamiKrispin/awesome-ds-setting/blob/main/README.md#set-up-git-and-ssh)
+- [Command Lines Tools](https://github.com/RamiKrispin/awesome-ds-setting/blob/main/README.md#command-lines-tools)
 - [Install Docker](https://github.com/RamiKrispin/awesome-ds-setting/blob/main/README.md#install-docker)
-- [Setting Terminal](https://github.com/RamiKrispin/awesome-ds-setting#terminal-setting)
-- [Setting VScode](https://github.com/RamiKrispin/awesome-ds-setting#setting-vscode)
-- [Setting Python](https://github.com/RamiKrispin/awesome-ds-setting#setting-python)
-- [Install R and RStudio](https://github.com/RamiKrispin/awesome-ds-setting/blob/main/README.md#install-r-and-rstudio)
-- [Shortcuts](https://github.com/RamiKrispin/awesome-ds-setting/blob/main/README.md#shortcuts)
-- [Setting Postgres](https://github.com/RamiKrispin/awesome-ds-setting#setting-postgres)
+- [Set Terminal Tools](https://github.com/RamiKrispin/awesome-ds-setting#set-terminal-tools)
+- [Set VScode](https://github.com/RamiKrispin/awesome-ds-setting#set-vscode)
+- [Set Python](https://github.com/RamiKrispin/awesome-ds-setting#set-python)
+- [Install R and Positron](https://github.com/RamiKrispin/awesome-ds-setting/blob/main/README.md#install-r-and-positron)
+- [Install Postgres](https://github.com/RamiKrispin/awesome-ds-setting#install-postgres)
+- [Miscellaneous](https://github.com/RamiKrispin/awesome-ds-setting#miscellaneous)
 
 
 ## Set Git and SSH
