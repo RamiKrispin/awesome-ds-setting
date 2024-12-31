@@ -16,12 +16,12 @@ That includes installing programming languages such as Python 🐍 and R. In add
 
 This document covers the following:
 - [Set Up Git and SSH](https://github.com/RamiKrispin/awesome-ds-setting/blob/main/README.md#set-up-git-and-ssh)
-- [Install Command Lines Tools](https://github.com/RamiKrispin/awesome-ds-setting/blob/main/README.md#install-command-lines-tools)
+- [Command Lines Tools](https://github.com/RamiKrispin/awesome-ds-setting/blob/main/README.md#command-lines-tools)
 - [Install Docker](https://github.com/RamiKrispin/awesome-ds-setting/blob/main/README.md#install-docker)
-- [Setting Terminal](https://github.com/RamiKrispin/awesome-ds-setting#terminal-setting)
-- [Setting VScode](https://github.com/RamiKrispin/awesome-ds-setting#setting-vscode)
-- [Setting Python](https://github.com/RamiKrispin/awesome-ds-setting#setting-python)
-- [Install R and RStudio](https://github.com/RamiKrispin/awesome-ds-setting/blob/main/README.md#install-r-and-rstudio)
+- [Set Terminal](https://github.com/RamiKrispin/awesome-ds-setting#terminal-setting)
+- [Set VScode](https://github.com/RamiKrispin/awesome-ds-setting#set-vscode)
+- [Set Python](https://github.com/RamiKrispin/awesome-ds-setting#setting-python)
+- [Install R and Positron](https://github.com/RamiKrispin/awesome-ds-setting/blob/main/README.md#install-r-and-rstudio)
 - [Shortcuts](https://github.com/RamiKrispin/awesome-ds-setting/blob/main/README.md#shortcuts)
 - [Setting Postgres](https://github.com/RamiKrispin/awesome-ds-setting#setting-postgres)
 
@@ -43,11 +43,11 @@ If this is a new computer or you did not set it before, it should prompt a windo
 
 ![image](https://user-images.githubusercontent.com/12760966/139562122-8a360563-89f0-4108-b916-ca20a4be7fe1.png)
 
-The `command line developer tools` is required to run git commands. Once installed, we can go back to the terminal and set the global git settings.
+The `command line developer tools` are required to run git commands. Once installed, we can go back to the terminal and set the global git settings.
 
 ### Set Git global options
 
-Git enables setting both local and global options. The global options will be used as default settings any time triggering a new repository with the `git init` command. You can override the global settings on specific repo by using local settings. Below, we will define the following global settings:
+Git enables setting both local and global options. The global options will be used as default settings any time a new repository with the `git init` command is created. You can override the global settings on a specific repo by using local settings. Below, we will define the following global settings:
 
 - Git user name
 - Git user email
@@ -72,7 +72,7 @@ git config --global init.defaultBranch main
 
 ### Set global Git ignore file
 
-The global `.gitignore` file enables you to set general ignore roles that will apply automatically to all repositories in your machine. This is useful when having repetitive cases of files you wish to ignore by default. A good example on Mac is the system file -.DS_Store, which is auto-generated on each folder, and you probably do not want to commit it. First, let's create the global `.gitignore` file using the `touch` command:
+The global `.gitignore` file enables you to set general ignore roles that will apply automatically to all repositories in your machine. This is useful when having repetitive cases of files you wish to ignore by default. A good example on Mac is the system file - `.DS_Store`, which is auto-generated on each folder, and you probably do not want to commit it. First, let's create the global `.gitignore` file using the `touch` command:
 
 ``` shell
 touch ~/.gitignore
@@ -89,19 +89,19 @@ Once the global ignore file is set, we can start adding the files we want git to
 ``` shell 
 echo .DS_Store >> ~/.gitignore
 ```
-**Note:** You want to be careful about the files you add to the global ignore file. Unless it is applicable to all cases, such as the .DS_Store example, you should not add it to the global settings and define it locally to avoid a git disaster.
+**Note:** You want to be careful about the files you add to the global ignore file. Unless it is applicable to all cases, such as the `.DS_Store` example, you should not add it to the global settings and define it locally to avoid a git disaster.
 
 ### Set default editor
 
-Git enables you to set the default shell code editor to create and edit your commit messages with the `core.editor` argument. Git supports the main command line editors such as `vim`, `emacs`, `nano`, etc. I set main as `vim`:
+Git enables you to set the default shell code editor to create and edit your commit messages with the `core.editor` argument. Git supports the main command line editors such as `vim`, `emacs`, `nano`, etc. I set the main CLI editor as `vim`:
 
 ``` shell
 git config --global core.editor "vim"
 ```
 
-### Review and modify global config settins
+### Review and modify global config settings
 
-By default, all the global settins saved to the `config` file under the `.ssh` folder. You can review the saved settings, modify and add new ones manually by editing the `config` file:
+By default, all the global settings are saved to the `config` file under the `.ssh` folder. You can review the saved settings, modify and add new ones manually by editing the `config` file:
 
 
 ``` shell
@@ -111,7 +111,7 @@ vim ~/.gitconfig
 
 ### Set SSH with Github
 
-Setting `SSH` key required to sync your local git repositories with the `origin`. By default, when creating the SSH keys it writes the files under the `.ssh` folder, if exists, otherwise it writes it down under the root folder. It is more "clean" to have it under the `.ssh` folder, therefore, my settings below assume this folder exists. 
+Setting `SSH` key required to sync your local git repositories with the `origin`. By default, when creating the SSH keys, it writes the files under the `.ssh` folder if it exists; otherwise, it writes them down under the root folder. It is more "clean" to have it under the `.ssh` folder. Therefore, my settings below assume this folder exists. 
 
 Let's start by creating the `.ssh` folder:
 
@@ -121,20 +121,20 @@ mkdir ~/.ssh
 
 The `ssh-keyget` command creates the SSH keys files:
 
-To set SSH key on your local machine you need to use `ssh-keyget`:
+To set the SSH key on your local machine, you need to use `ssh-keyget`:
 
 ``` shell
 ssh-keygen -t ed25519 -C "YOUR_EAMIL@example.com"
 ```
-**Note:** The `-t` argument defines the algorithm type for the authentication key, in this case I used `ed25519` and the `-C` argument enables adding comment,in this case the user name email for reference.
+**Note:** The `-t` argument defines the algorithm type for the authentication key. I used `ed25519`, and the `-C` argument enables adding comments, in this case, the user name email for reference.
 
-After runngint the `ssh-keygen` command, it will prompt for setting file name and password (optional). By default it will save it under the root folder. 
+After running the `ssh-keygen` command, you will be prompted to set the file name and password (optional). By default it will save it under the root folder. 
 
-**Note:** this process will generate two files:
-- `your_ssh_key` is the private key, you should not expose it
-- `your_ssh_key.pub` is the public key which will be used to to set the SSH on Github
+**Note:** This process will generate two files:
+- `your_ssh_key` is the private key. You should not expose it!
+- `your_ssh_key.pub` is the public key that will be used to to set the SSH on Github
 
-The next step is to register the key on your Github account. On your account main page go to the `Settings` menu and select on the main menu `SSH and GPG keys` (purple rectangle 👇🏼) and click on the `New SSH key` (yellow rectangle 👇🏼):
+The next step is to register the key on your Github account. On your account main page, go to the `Settings` menu and select on the main menu `SSH and GPG keys` (purple rectangle 👇🏼), and click on the `New SSH key` (yellow rectangle 👇🏼):
 
 <img width="1054" alt="Screenshot_ssh1" src="images/git_ssh1.png">
 
@@ -145,7 +145,7 @@ Next, set the key name under the title text box (purple rectangle 👇🏼), and
 
 **Note:** I set the machine nickname (e.g., MacBook Pro 2017, Mac Pro, etc.) as the key title to easily identify the relevant key in the future.
 
-Next step is to update the `config` file on the `~/.ssh` folder. You can edit the `config` file with `vim`:
+The next step is to update the `config` file on the `~/.ssh` folder. You can edit the `config` file with `vim`:
 
 ``` shell
 vim ~/.ssh/config 
@@ -175,9 +175,9 @@ ssh-add --apple-use-keychain ~/.ssh/your_ssh_key
 - Setting Git ignore - https://www.atlassian.com/git/tutorials/saving-changes/gitignore
 - Initial Git setup - https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
 
-## Install Command Lines Tools
+## Command Lines Tools
 
-This section covers core command lines tools.
+This section covers core command line tools.
 
 ### Homebrew
 
@@ -187,7 +187,7 @@ The Homebrew (or `brew`) enables you to install CL packages and tools for Mac. T
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-After finishing the installation, you may need to run the following commends (follow the instractions at the end of the installation):
+After finishing the installation, you may need to run the following commands (follow the instructions at the end of the installation):
 
 ``` shell
 (echo; echo ‘eval “$(/opt/homebrew/bin/brew shellenv)“’) >> /Users/USER_NAME/.zprofile
@@ -213,12 +213,12 @@ To spin a VM locally to run Docker we will set [Docker Desktop](https://www.dock
 
 ### Install Docker Desktop
 
-Go to [Docker website](https://docs.docker.com/get-started/get-docker/) and follow the intallation instractions according to your OS:
+Go to [Docker website](https://docs.docker.com/get-started/get-docker/) and follow the installation instructions according to your OS:
 
 <img src="images/docker-desktop.png" width="80%" align="center"/></a>
 
 
-**Note:** Docker Desktop required license
+**Note:** Docker Desktop requires a license for enterprise use. Please check before the license agreement
 
 ## Setting Terminal 
 
@@ -226,7 +226,7 @@ This section focuses on installing and setting tools for working on the terminal
 
 ### Install iTerm2
 
-The `terminal` is the built-in emulator on mac. I personally love to work with `iTerm2` as it provides additional functionality and customization options. iTerm2 is available only for mac, and can be installed directly from the [iTerm2](https://iterm2.com/) website or via `homebrew`:
+The `terminal` is the built-in emulator on Mac. I personally love to work with `iTerm2` as it provides additional functionality and customization options. iTerm2 is available only for Mac, and can be installed directly from the [iTerm2](https://iterm2.com/) website or via `homebrew`:
 
 ``` shell
 > brew install --cask iterm2
@@ -240,7 +240,7 @@ The `terminal` is the built-in emulator on mac. I personally love to work with `
 
 ### Install zsh
 
-The next step is to install Z shell or `zsh`. The `zsh` is shell flavor built on top of `bash`, providing a variety of add-in tools on the terminal. We will use `homebrew` again to install `zsh`:
+The next step is to install Z shell or `zsh`. The `zsh` is a shell flavor built on top of `bash`, providing a variety of add-in tools on the terminal. We will use `homebrew` again to install `zsh`:
 
 ``` shell
 > brew install zsh
@@ -293,7 +293,7 @@ And then change the theme setting on the `~/.zshrc` by `ZSH_THEME="powerlevel10k
 Choice [ynq]:
 ```
 
-**Note:** the `Meslo Nerd` font is required to display symbols that are being used by the  `powerlevel10k` theme
+**Note:** The `Meslo Nerd` font is required to display symbols that are being used by the  `powerlevel10k` theme
 
 You can always modify your selection by using:
 
@@ -323,14 +323,14 @@ After you reset your terminal, you should be able to see the syntex highlight in
 <img src="images/terminal_highlight.png" width="65%" align="center"/></a>
 
 
-#### Resources
+### Resources
 - `iTerm2` - https://iterm2.com/index.html
 - `oh my zsh` - https://ohmyz.sh/
 - freeCodeCamp blog post - https://www.freecodecamp.org/news/how-to-configure-your-macos-terminal-with-zsh-like-a-pro-c0ab3f3c1156/
 - `powerlevel10k` theme - https://github.com/romkatv/powerlevel10k
 - `zsh-syntax-highlighting` - https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#in-your-zshrc
 
-### Setting VScode
+## Set VScode
 
 VScode is a general-purpose IDE and my favorite development environment. VScode supports mutliple OS such as Lunix, MacOS, Windows, and Raspberry Pi. 
 
@@ -339,7 +339,7 @@ Installing VScode is straightforward - go to the VScode website  https://code.vi
 
 Download the installation file and follow the instructions. 
 
-### Setting Up Python
+## Set Python
 
 This section focuses on setting up tools for working with Python locally (without Docker container) with UV and miniconda. If you are intrested in setting up a dockerized Python/R development environment with VScode, Docker, and the Dev Containers extension, please check out the following tutorials:
 - Python - https://github.com/RamiKrispin/vscode-python
@@ -350,7 +350,7 @@ Also, you can leverage the following VScode templates:
 - Python (using uv) - https://github.com/RamiKrispin/vscode-python-uv-template
 - R - https://github.com/RamiKrispin/vscode-r-template
 
-#### Installing UV
+### Install UV
 
 UV is an extremely fast Python package and project manager, written in Rust. Installing UV is straightforward and I recommend checking the project [documentation](https://docs.astral.sh/uv/getting-started/installation/#__tabbed_1_1).
 
@@ -369,7 +369,7 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 ```
 
 
-#### Installing miniconda
+### Install miniconda
 
 Miniconda is an alternative tool to set up local Python environments. Go to the Miniconda installer [page](https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links) and download the installing package based on your operating system and Python version to install the most recent version. Once Miniconda installed you can install Python packaes with `conda`:
 
@@ -383,7 +383,7 @@ Likewise, you can use `conda` to create an environment:
 conda create -n myenv python
 ```
 
-##### Common conda commands
+#### Common conda commands
 
 Get a list of environments:
 
@@ -403,7 +403,7 @@ Get package available versions:
 conda search pandas
 ```
 
-Activate an enviroment:
+Activate an environment:
 
 ``` sheel
 conda activate myenv
@@ -415,16 +415,16 @@ Get a list of installed packages in the environment:
 conda list
 ```
 
-Deactivate the enviroment:
+Deactivate the environment:
 
 ```shell
 conda deactivate
 ```
 
 
-#### Installing Ruff
+### Installing Ruff
 
-Ruff is an extremely fast Python linter and code formatter, written in Rust.
+Ruff is an extremely fast Python linter and code formatted, written in Rust.
 
 You can install Ruff directly from PyPi using `pip`:
 ```shell
@@ -439,13 +439,13 @@ Likewise, on Windows using `powershell`:
 powershell -c "irm https://astral.sh/ruff/install.ps1 | iex"
 ```
 
-#### Resources
+### Resources
 - UV documentation - https://docs.astral.sh/uv/
 - Miniconda - https://docs.anaconda.com/miniconda/
 - Ruff documentation - https://docs.astral.sh/ruff/
 
 
-### Install R and Positron
+## Install R and Positron
 
 To set in your machine [R](https://cran.r-project.org/index.html) and [Positron](https://positron.posit.co/) you should start first with installing R from CRAN. Go to https://cran.r-project.org/ and select the relevent OS:
 
