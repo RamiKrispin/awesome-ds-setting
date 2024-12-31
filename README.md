@@ -539,6 +539,25 @@ Where the `u` arugment enbales to define the port you want to clear by the USER 
 
 ## Miscellaneous
 
+### Install Stats
+
+Stats is a macOS system monitor in your menu bar. You can download it directly from the project [repo](https://github.com/exelban/stats), or use `brew`:
+
+```shell
+brew install stats
+```
+
+### Install Htop
+
+Htop is an interactive cross-platform commend line process viewer. On Mac install `htop` with `brew`:
+
+```shell
+brew install htop
+```
+
+For other OS systems, follow the instraction on the project [download page](https://htop.dev/downloads.html).
+
+
 ### Install XQuartz
 
 The XQuartz is an open-source project that provides required graphic applications (X11) for macOS (similar to the X.Org X Window System functionality). To install it, go to https://www.xquartz.org/ - download and install it.
