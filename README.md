@@ -15,7 +15,7 @@ That includes installing programming languages such as Python 🐍 and R. In add
 **Update:** This setting is up-to-date with [macOS Sequoia](https://www.apple.com/macos/macos-sequoia/) ❤️. However, most of the tools in this document should be OS agnostic (e.g., Windows, Linux, etc.) with some minor modifications.
 
 This document covers the following:
-- [Setting Git and SSH](https://github.com/RamiKrispin/awesome-ds-setting/blob/main/README.md#setting-git-and-ssh)
+- [Set Up Git and SSH](https://github.com/RamiKrispin/awesome-ds-setting/blob/main/README.md#set-up-git-and-ssh)
 - [Install Command Lines Tools](https://github.com/RamiKrispin/awesome-ds-setting/blob/main/README.md#install-command-lines-tools)
 - [Install Docker](https://github.com/RamiKrispin/awesome-ds-setting/blob/main/README.md#install-docker)
 - [Setting Terminal](https://github.com/RamiKrispin/awesome-ds-setting#terminal-setting)
@@ -26,7 +26,7 @@ This document covers the following:
 - [Setting Postgres](https://github.com/RamiKrispin/awesome-ds-setting#setting-postgres)
 
 
-## Setting Git and SSH
+## Set Up Git and SSH
 
 This section focuses on the core git settings, such as global definitions and setting SSH with your Github account.
 
@@ -109,7 +109,7 @@ vim ~/.gitconfig
 ```
 
 
-## Set SSH with Github
+### Set SSH with Github
 
 Setting `SSH` key required to sync your local git repositories with the `origin`. By default, when creating the SSH keys it writes the files under the `.ssh` folder, if exists, otherwise it writes it down under the root folder. It is more "clean" to have it under the `.ssh` folder, therefore, my settings below assume this folder exists. 
 
@@ -167,19 +167,19 @@ Last, run the following to load the key:
 ssh-add --apple-use-keychain ~/.ssh/your_ssh_key
 ```
 
-#### Resources
+### Resources
 
 - Github documentation - https://docs.github.com/en/enterprise-server@3.0/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
 - `ssh-keyget` arguments -  https://www.ssh.com/academy/ssh/keygen
-- A great video toturial about setting SSH:  https://www.youtube.com/watch?v=RGOj5yH7evk&t=1230s&ab_channel=freeCodeCamp.org
+- A great video tutorial about setting SSH:  https://www.youtube.com/watch?v=RGOj5yH7evk&t=1230s&ab_channel=freeCodeCamp.org
 - Setting Git ignore - https://www.atlassian.com/git/tutorials/saving-changes/gitignore
 - Initial Git setup - https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
 
-### Install Command Lines Tools
+## Install Command Lines Tools
 
 This section covers core command lines tools.
 
-#### Homebrew
+### Homebrew
 
 The Homebrew (or `brew`) enables you to install CL packages and tools for Mac. To install `brew` run from the terminal:
 
@@ -198,7 +198,7 @@ eval “$(/opt/homebrew/bin/brew shellenv)”
 
 More info available: https://brew.sh/
 
-#### jq
+### jq
 
 The `jq` is a lightweight and flexible command-line JSON processor. You can install it with `brew`:
 
@@ -206,12 +206,12 @@ The `jq` is a lightweight and flexible command-line JSON processor. You can inst
 brew install jq
 ```
 
-### Install Docker
+## Install Docker
 
 To spin a VM locally to run Docker we will set [Docker Desktop](https://www.docker.com/products/docker-desktop).
 
 
-#### Install Docker Desktop
+### Install Docker Desktop
 
 Go to [Docker website](https://docs.docker.com/get-started/get-docker/) and follow the intallation instractions according to your OS:
 
@@ -220,11 +220,11 @@ Go to [Docker website](https://docs.docker.com/get-started/get-docker/) and foll
 
 **Note:** Docker Desktop required license
 
-### Setting Terminal 
+## Setting Terminal 
 
 This section focuses on installing and setting tools for working on the terminal. 
 
-#### Install iTerm2
+### Install iTerm2
 
 The `terminal` is the built-in emulator on mac. I personally love to work with `iTerm2` as it provides additional functionality and customization options. iTerm2 is available only for mac, and can be installed directly from the [iTerm2](https://iterm2.com/) website or via `homebrew`:
 
@@ -238,7 +238,7 @@ The `terminal` is the built-in emulator on mac. I personally love to work with `
 🍺  iterm2 was successfully installed!
 ```
 
-#### Install zsh
+### Install zsh
 
 The next step is to install Z shell or `zsh`. The `zsh` is shell flavor built on top of `bash`, providing a variety of add-in tools on the terminal. We will use `homebrew` again to install `zsh`:
 
@@ -252,33 +252,33 @@ The next step is to install Z shell or `zsh`. The `zsh` is shell flavor built on
 🍺  /usr/local/Cellar/zsh/5.8_1: 1,531 files, 14.7MB
 ```
 
-#### Install and Set Oh-My-Zsh
+### Install and Set Oh-My-Zsh
 
-After installing the `zsh` we will install `oh-my-zsh`, an open-source framework for managing `zsh` configuration. We wiil install it with the `curl` command:
+After installing the `zsh` we will install `oh-my-zsh`, an open-source framework for managing `zsh` configuration. We will install it with the `curl` command:
 
 ``` shell
  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-You can note that your terminal view changed (you may need to reset your terminal to see the changes) and the default command line cursor looks like:
+You can note that your terminal view changed (you may need to reset your terminal to see the changes), and the default command line cursor looks like this:
 
 ``` zsh
 ➜  ~
 ```
 
-The default setting of `Oh My Zsh` stored on `~/.zshrc` and you can modify the default theme by editing the file:
+The default setting of `Oh My Zsh` is stored on `~/.zshrc`, and you can modify the default theme by editing the file:
 
 ```
 vim ~/.zshrc
 ```
 
-I use the `powerlevel10k` which can be install by cloning the Github repository (for `oh-my-zsh`):
+I use the `powerlevel10k`, which can be installed by cloning the Github repository (for `oh-my-zsh`):
 
 ``` zsh
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 
-And then change the theme setting on the `~/.zshrc` by `ZSH_THEME="powerlevel10k/powerlevel10k"`. After restarting the terminal, and reopening it you will a sequence of questions on that enables you to set the theme setting:
+And then change the theme setting on the `~/.zshrc` by `ZSH_THEME="powerlevel10k/powerlevel10k"`. After restarting the terminal, and reopening it, you will a sequence of questions that enables you to set the theme setting:
 
 ``` zsh
 
@@ -293,7 +293,7 @@ And then change the theme setting on the `~/.zshrc` by `ZSH_THEME="powerlevel10k
 Choice [ynq]:
 ```
 
-**Note:** the `Meslo Nerd` font is required to display symbles that is being used by the  `powerlevel10k` theme
+**Note:** the `Meslo Nerd` font is required to display symbols that are being used by the  `powerlevel10k` theme
 
 You can always modify your selection by using:
 
@@ -301,7 +301,7 @@ You can always modify your selection by using:
  p10k configure
  ```
  
- The terminal after adding the `powerlevel10k` theme looks like:
+ The terminal after adding the `powerlevel10k` theme looks like this:
  
  <img src="images/terminal.png" width="65%" align="center"/></a>
 
@@ -311,14 +311,14 @@ Installing `zsh-syntax-highlighting` to add code highlight on the terminal:
 brew install zsh-syntax-highlighting
 ```
 
-After the installation is done you will need to clone the source code. I set the destination as home folder, defining the traget folder hidden:
+After the installation is done, you will need to clone the source code. I set the destination as the home folder, defining the target folder hidden:
 
 ``` zsh
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.zsh-syntax-highlighting
 echo "source $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
 ```
 
-After you reset your terminal, you should see be able to see the syntex highlight in green (in my case):
+After you reset your terminal, you should be able to see the syntex highlight in green (in my case):
 
 <img src="images/terminal_highlight.png" width="65%" align="center"/></a>
 
@@ -354,7 +354,7 @@ Also, you can leverage the following VScode templates:
 
 UV is an extremely fast Python package and project manager, written in Rust. Installing UV is straightforward and I recommend checking the project [documentation](https://docs.astral.sh/uv/getting-started/installation/#__tabbed_1_1).
 
-On Mac and Linux you can use `curl`:
+On Mac and Linux, you can use `curl`:
 ```shell
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
