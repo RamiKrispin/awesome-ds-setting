@@ -6,10 +6,13 @@ After setting/reinstalling a couple of machines from scratch in the last few mon
 
 💡 **A pro tip** 👉🏼 avoid dropping a cup of ☕️ on your machine 🤦🏻‍♂️
 
-That includes installing programming languages such as R, Julia, and Python and their supporting IDEs RStudio and VScode. In addition, set the terminal, git, and install supporting tools such as iTerm2, oh-my-zsh, Docker, etc. 
+That includes installing programming languages such as Python 🐍 and R. In addition, setting up the terminal, git, and install supporting tools such as iTerm2, oh-my-zsh, Docker 🐳, etc. 
 
 
-**Update:** This setting is up-to-date with macOS Ventura. However, most of the tools in this document should be OS agnostic (e.g., Windows, Linux, etc.) with some minor modifications.
+**Last Update:** January 1st, 2025
+
+
+**Update:** This setting is up-to-date with [macOS Sequoia](https://www.apple.com/macos/macos-sequoia/) ❤️. However, most of the tools in this document should be OS agnostic (e.g., Windows, Linux, etc.) with some minor modifications.
 
 This document covers the following:
 - [Setting Git and SSH](https://github.com/RamiKrispin/awesome-ds-setting/blob/main/README.md#setting-git-and-ssh)
@@ -205,111 +208,17 @@ brew install jq
 
 ### Install Docker
 
-There are multiple ways to spin a VM locally to run Docker. I typically use [Docker Desktop](https://www.docker.com/products/docker-desktop), and for learning purposes (e.g., Kubernetes) I also install [Minikube](https://minikube.sigs.k8s.io/docs/).
+To spin a VM locally to run Docker we will set [Docker Desktop](https://www.docker.com/products/docker-desktop).
+
 
 #### Install Docker Desktop
 
-Go to [Docker website](https://docs.docker.com/get-docker/) and follow the intallation instractions according to your OS:
+Go to [Docker website](https://docs.docker.com/get-started/get-docker/) and follow the intallation instractions according to your OS:
 
-<img src="images/get_docker.png" width="65%" align="center"/></a>
-
-#### Install Minikube
-
-Minikube enables you to set virtual environment to run Docker. This is mainly relevant if you are using macOS or Windows and want to run Docker via cli. To install Minikube you will need to install first [kubectl](https://kubernetes.io/docs/reference/kubectl/overview/), [hyperkit](https://github.com/moby/hyperkit). We will use `brew` to install all those components:
-
-``` shell
-brew install kubectl
-brew install hyperkit
-brew install docker
-brew install minikube
-```
-
-Lunching minikube with the `start` argument and setting the memory and cpu allocation:
-
-``` shell
-> minikube start --memory 4096 --cpus 2 --driver hyperkit
-😄  minikube v1.24.0 on Darwin 12.0.1
-    ▪ MINIKUBE_ACTIVE_DOCKERD=minikube
-✨  Using the hyperkit driver based on user configuration
-👍  Starting control plane node minikube in cluster minikube
-🔥  Creating hyperkit VM (CPUs=2, Memory=4096MB, Disk=20000MB) ...
-🐳  Preparing Kubernetes v1.22.3 on Docker 20.10.8 ...
-    ▪ Generating certificates and keys ...
-    ▪ Booting up control plane ...
-    ▪ Configuring RBAC rules ...
-🔎  Verifying Kubernetes components...
-    ▪ Using image gcr.io/k8s-minikube/storage-provisioner:v5
-🌟  Enabled addons: storage-provisioner, default-storageclass
-🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
-```
-
-Lunch Docker:
-
-``` shell
-eval $(minikube -p minikube docker-env)
-```
-
-Check the Docker status:
-``` shell
-> docker info
-Client:
- Context:    default
- Debug Mode: false
-
-Server:
- Containers: 15
-  Running: 14
-  Paused: 0
-  Stopped: 1
- Images: 10
- Server Version: 20.10.8
- Storage Driver: overlay2
-  Backing Filesystem: extfs
-  Supports d_type: true
-  Native Overlay Diff: true
-  userxattr: false
- Logging Driver: json-file
- Cgroup Driver: systemd
- Cgroup Version: 1
- Plugins:
-  Volume: local
-  Network: bridge host ipvlan macvlan null overlay
-  Log: awslogs fluentd gcplogs gelf journald json-file local logentries splunk syslog
- Swarm: inactive
- Runtimes: io.containerd.runc.v2 io.containerd.runtime.v1.linux runc
- Default Runtime: runc
- Init Binary: docker-init
- containerd version: e25210fe30a0a703442421b0f60afac609f950a3
- runc version: 4144b63817ebcc5b358fc2c8ef95f7cddd709aa7
- init version: de40ad0
- Security Options:
-  seccomp
-   Profile: default
- Kernel Version: 4.19.202
- Operating System: Buildroot 2021.02.4
- OSType: linux
- Architecture: x86_64
- CPUs: 2
- Total Memory: 3.847GiB
- Name: minikube
- ID: 2IME:DJBF:L32S:HA4Q:DFCX:2LRI:JBCQ:6ORQ:RHUE:Q4S6:7WYE:PUD7
- Docker Root Dir: /var/lib/docker
- Debug Mode: false
- Registry: https://index.docker.io/v1/
- Labels:
-  provider=hyperkit
- Experimental: false
- Live Restore Enabled: false
- Product License: Community Engine
-```
+<img src="images/docker-desktop.png" width="80%" align="center"/></a>
 
 
-
-#### Resources 
-- Minikube documentation - https://minikube.sigs.k8s.io/docs/start/
-- Installation guide - https://www.youtube.com/watch?v=zwmjzU62LWQ&ab_channel=AutomationStepbyStep
-- Kubectl - https://kubernetes.io/docs/reference/kubectl/overview/
-- hyperkit - https://github.com/moby/hyperkit
+**Note:** Docker Desktop required license
 
 ### Setting Terminal 
 
@@ -348,7 +257,7 @@ The next step is to install Z shell or `zsh`. The `zsh` is shell flavor built on
 After installing the `zsh` we will install `oh-my-zsh`, an open-source framework for managing `zsh` configuration. We wiil install it with the `curl` command:
 
 ``` shell
- sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 You can note that your terminal view changed (you may need to reset your terminal to see the changes) and the default command line cursor looks like:
@@ -428,32 +337,41 @@ VScode is a general-purpose IDE and my favorite development environment. VScode 
 Installing VScode is straightforward - go to the VScode website  https://code.visualstudio.com/ and click on the Download button (purple rectangle 👇🏼):
 <img src="images/vscode-download.png" width="100%" align="center"/></a>
 
-Download the installation file and follow the instructions. Here are the default extensions settings:
+Download the installation file and follow the instructions. 
 
-``` json
-"extensions": [
-                "quarto.quarto",
-                "ms-azuretools.vscode-docker",
-                "ms-python.python",
-                "rdebugger.r-debugger",
-                "ms-vscode-remote.remote-containers",
-                "yzhang.markdown-all-in-one",
-                "reditorsupport.r",
-                "redhat.vscode-yaml",
-                "REditorSupport.r",
-                "REditorSupport.r-lsp", 
-                "RDebugger.r-debugger" 
-            ]
+### Setting Up Python
+
+This section focuses on setting up tools for working with Python locally (without Docker container) with UV and miniconda. If you are intrested in setting up a dockerized Python/R development environment with VScode, Docker, and the Dev Containers extension, please check out the following tutorials:
+- Python - https://github.com/RamiKrispin/vscode-python
+- R - https://github.com/RamiKrispin/vscode-r
+
+Also, you can leverage the following VScode templates:
+- Python (using venv) - https://github.com/RamiKrispin/vscode-python-template
+- Python (using uv) - https://github.com/RamiKrispin/vscode-python-uv-template
+- R - https://github.com/RamiKrispin/vscode-r-template
+
+#### Installing UV
+
+UV is an extremely fast Python package and project manager, written in Rust. Installing UV is straightforward and I recommend checking the project [documentation](https://docs.astral.sh/uv/getting-started/installation/#__tabbed_1_1).
+
+On Mac and Linux you can use `curl`:
+```shell
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+or with `wget`:
+```shell
+wget -qO- https://astral.sh/uv/install.sh | sh
+```
+
+On Windows using `powershell`:
+```shell
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
 
-### Setting Python
-
-This section focuses on setting up a Python environment.
-
 #### Installing miniconda
 
-Miniconda is a great tool to set local Python environments. Go to the Miniconda installer [page](https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links) and download the installing package based on your operating system and Python version to install the most recent version. Once Miniconda installed you can install Python packaes with `conda`:
+Miniconda is an alternative tool to set up local Python environments. Go to the Miniconda installer [page](https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links) and download the installing package based on your operating system and Python version to install the most recent version. Once Miniconda installed you can install Python packaes with `conda`:
 
 ``` shell
 conda install pandas
@@ -465,7 +383,7 @@ Likewise, you can use `conda` to create an environment:
 conda create -n myenv python
 ```
 
-#### Common conda commands
+##### Common conda commands
 
 Get a list of environments:
 
@@ -503,105 +421,55 @@ Deactivate the enviroment:
 conda deactivate
 ```
 
-### Shortcuts
 
-This section covers the installation and setting of additional tools and features such as screen spliting, shortcuts, etc.
+#### Installing Ruff
+
+Ruff is an extremely fast Python linter and code formatter, written in Rust.
+
+You can install Ruff directly from PyPi using `pip`:
+```shell
+pip install ruff
+```
+On Mac and Linux using `curl`:
+```shell
+curl -LsSf https://astral.sh/ruff/install.sh | sh
+```
+Likewise, on Windows using `powershell`:
+```shell
+powershell -c "irm https://astral.sh/ruff/install.ps1 | iex"
+```
+
+#### Resources
+- UV documentation - https://docs.astral.sh/uv/
+- Miniconda - https://docs.anaconda.com/miniconda/
+- Ruff documentation - https://docs.astral.sh/ruff/
 
 
-### Install R and RStudio
+### Install R and Positron
 
-To set in your machine R and RStudio you should start first with installing R from CRAN. Go to https://cran.r-project.org/ and select `Download R for macOS` and select the release you wish to install and download. 
+To set in your machine [R](https://cran.r-project.org/index.html) and [Positron](https://positron.posit.co/) you should start first with installing R from CRAN. Go to https://cran.r-project.org/ and select the relevent OS:
+
+<img src="images/install-R.png" width="100%" align="center"/></a>
 
 **Note:** For macOS, there are two versions, depending on the type of your machine CPU - one for `Apple silicon arm64` and second for `Intel 64-bit`.
 
 Once you finish to download the build you select open the `pkg` fild and start to install it:
 
-![image](https://user-images.githubusercontent.com/12760966/140316216-0e51e0b1-4f32-4a63-8913-160fb939895a.png)
+<img src="images/install-R2.png" width="100%" align="center"/></a>
 
 
-**Note:** Older releases available on [CRAN Archive](https://cran-archive.r-project.org/bin/macosx/).
+**Note:** Older releases available on [CRAN Archive](https://cran-archive.r-project.org/bin/).
 
-Once R installed, you can install RStudio - go to https://posit.co website under Products tab and select [RStudio IDE](https://posit.co/downloads/) and select the version and download it:
-<img src="images/rstudio.png" width="100%" align="center"/></a>
+Once R installed, you can install Positron. Go to https://positron.posit.co/download.html and select the relevent OS version and download the relevent file:
+<img src="images/install-positron.png" width="90%" align="center"/></a>
+
 
 After finish to download it move the application into the Application folder.
 
-#### Set RStudio
-
-Next, let's set the **Global options** -> go to `Tools` and then select `Global options` and update the following:
-- **General:** 
-  - Workspace - select `Never` to `Save workspace to .RData on exit` option
-  - History - untick the first options - `Always save history...`. This will avoid saving the session on quit
-- **Code:** 
-  - Code snippet - under the `Editing` tab -> `Snippet` menu -> tick the `Enable code snippets` option and select `Edit Snippets` button to edit your snippits. My default snippets available [here](https://gist.github.com/RamiKrispin/b16b63688746c4cfd01ec21cc7c25d2a)
-  - Rainbow parentheses 🌈 - under the `Display` tab, tick the `Rainbow parentheses` box
-- **Appearance:**  
-  - select the font type and size, and editor theme (Merbivore Soft):
-
-![image](https://user-images.githubusercontent.com/12760966/142575001-0cc0d549-25c6-4eab-9d1a-3f540d6ba8ae.png)
-
-
-#### RStudio main shortcuts
-
-- Clear console - `Ctrl` +  `L`
-- Clost current document - `Cmd` + `W`
-- Move focus to the Source panel - `Cmd` + `1`
-- Move focus to the Console panel - `Cmd` + `2`
-- Move tab left - `Cmd` + `]`
-- Move tab right - `Cmd` + `[`
-- Move tab to first - `Cmd` + `P`
-- Move tab to last - `Cmd` + `\`
-- New Rmarkdown notebook - `Cmd` + `R`
 
 #### Install XQuartz
 
 The XQuartz is an open-source project that provides required for graphic applications (X11) for macOS (similar to the X.Org X Window System functionality). To install it go to https://www.xquartz.org/ - download and install it.
-
-#### Install Orca
-
-Orca is application for transferring plotly graphs into images. To install the app on macOS:
-
-- Go to the project [Github page](https://github.com/plotly/orca) and download the most recent [release](https://github.com/plotly/orca/releases) (i.e., `mac-release.zip`)
-- Unzip the `mac-release.zip` file.
-- Double-click on the `orca-X.Y.Z.dmg` file. This will open an installation window.
-- Drag the orca icon into the Applications folder.
-- Open finder and navigate to the Applications/ folder.
-- Right-click on the orca icon and select Open from the context menu.
-- A password dialog will appear asking for permission to add orca to your system `PATH`.
-- Enter you password and click OK.
-- This should open an Installation Succeeded window.
-- Open a new terminal and verify that the orca executable is available on your PATH.
-
-``` shell
-> which orca
-/usr/local/bin/orca
-```
-
-**Resources**
-- https://github.com/plotly/orca/releases
-- https://plotly.com/r/static-image-export/
-
-
-### Installing Julia
-
-To install Julia, go to https://julialang.org/downloads/ to download the current stable version of Julia or older releases. On Mac, the next step after moving the `dmg` file to the **Applications** folder, is to add Julia to PATH:
-
-``` shell
-sudo mkdir -p /usr/local/bin
-sudo rm -f /usr/local/bin/julia
-sudo ln -s /Applications/Julia-1.7.app/Contents/Resources/julia/bin/julia /usr/local/bin/julia
-
-```
-
-**Note:** That the Julia version on the code above should aligned with the one installed on your local machine. More info avilable [here](https://julialang.org/downloads/platform/#macos).
-
-
-#### Setting Julia with VScode
-
-WIP
-
-
-
 
 #### Rectangle
 
@@ -610,7 +478,7 @@ To install it go to https://rectangleapp.com and download it. Once installed you
 
 <img src="images/rectangleapp.png" width="80%" align="center"/></a>
 
-
+**Note:** This functionality is built-in with macOS Sequoia, and it may be redundant to install Rectangle
 #### Keyboard Shortcuts
 
 * Change language - if you are using more than one language, you can add a keyboard shortcut for switching between them. Go to `System Preferences...` -> `keyboard` and select the shortcut tab. Under the `Input Sources` tick the `Select the previous input source option`:
@@ -619,7 +487,7 @@ To install it go to https://rectangleapp.com and download it. Once installed you
 
 **Note:** that you can modify the keyboard shortcut by clicking shortcut definition in that row
 
-### Setting Postgres
+### Installing Postgres
 
 PostgreSQL supprts most of the common OS such as Windows, macOS, Linux, etc.
 
